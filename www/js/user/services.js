@@ -1,18 +1,17 @@
 angular.module('user.services', [])
 
-    .service('UserService', ['$q', 'ParseConfiguration',
-        function ($q, ParseConfiguration) {
+.service('UserService', ['$q', 'ParseConfiguration',
+    function ($q, ParseConfiguration) {
 
-            var parseInitialized = false;
+        var parseInitialized = false;
 
-
-            return {
+        return {
 
                 /**
                  *
                  * @returns {*}
                  */
-                init: function () {
+                 init: function () {
 
                     debugger;
                     // if initialized, then return the activeUser
@@ -34,7 +33,7 @@ angular.module('user.services', [])
                  *
                  * @param _userParams
                  */
-                createUser: function (_userParams) {
+                 createUser: function (_userParams) {
 
                     var user = new Parse.User();
                     user.set("username", _userParams.email);
@@ -52,7 +51,7 @@ angular.module('user.services', [])
                  * @param _parseInitUser
                  * @returns {Promise}
                  */
-                currentUser: function (_parseInitUser) {
+                 currentUser: function (_parseInitUser) {
 
                     // if there is no user passed in, see if there is already an
                     // active user that can be utilized
@@ -71,14 +70,14 @@ angular.module('user.services', [])
                  * @param _password
                  * @returns {Promise}
                  */
-                login: function (_user, _password) {
+                 login: function (_user, _password) {
                     return Parse.User.logIn(_user, _password);
                 },
                 /**
                  *
                  * @returns {Promise}
                  */
-                logout: function (_callback) {
+                 logout: function (_callback) {
                     var user = Parse.User.current();
                     if (null !== user) {
                         console.log("logging out user " + user.get("username"));

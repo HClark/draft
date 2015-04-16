@@ -21,8 +21,8 @@ angular.module('starter',
  * parse constants
  */
     .value('ParseConfiguration', {
-        applicationId: "xxxxxxxx",
-        javascriptKey: "yyyyyyyyy"
+        applicationId: "UXm5of3vo5gvHTnp2LCxtrTJuDZfABFJIvdNP4CR",
+        javascriptKey: "Ei9oWJukPQPnK4WLh3r5JvwaKlARRjrIMgpJxcxw"
     })
 /**
  *
@@ -96,8 +96,9 @@ angular.module('starter',
         $urlRouterProvider.otherwise('/tab/list');
 
     })
-    .run(function ($ionicPlatform, $rootScope, $state) {
+    .run(function ($ionicPlatform, $rootScope, $state, UserService) {
 
+        UserService.init();
 
         $rootScope.$on('$stateChangeError',
             function (event, toState, toParams, fromState, fromParams, error) {

@@ -4,3 +4,5 @@ angular.module('app.services', [])
         function ($q, ParseConfiguration) {
 
         }]);
+
+    var 

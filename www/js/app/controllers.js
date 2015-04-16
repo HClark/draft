@@ -15,7 +15,7 @@ angular.module('app.controllers', [])
         '$state', '$scope', 'UserService',   // <-- controller dependencies
         function ($state, $scope, UserService) {
 
-            $scope.dataList = ["One", "Two", "Three"];
+            $scope.photo; // = ["One", "Two", "Three"];
 
 
         }])

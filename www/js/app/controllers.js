@@ -3,23 +3,30 @@
  * here for the purpose of showing how a service might
  * be used in an application
  */
-angular.module('app.controllers', [])
-    .controller('ListDetailCtrl', [
+ angular.module('app.controllers', [])
+ .controller('ListDetailCtrl', [
         '$state', '$scope', '$stateParams', 'UserService',   // <-- controller dependencies
         function ($state, $scope, $stateParams, UserService) {
 
             $scope.index = $stateParams.itemId;
 
         }])
-    .controller('ListCtrl', [
-        '$state', '$scope', 'UserService',   // <-- controller dependencies
-        function ($state, $scope, UserService) {
+ .controller('ListCtrl', [
+        '$state', '$scope', 'UserService','AppService','$timeout',   // <-- controller dependencies
+        function ($state, $scope, UserService, AppService, $timeout) {
 
-            $scope.photo; // = ["One", "Two", "Three"];
+            AppService.findStuff().then(function(_photos){
+                $timeout(function(){
+                    $scope.photoList = _photos;
+                },0);
+
+            }, function(_error){
+                alert(_error)
+            });
 
 
         }])
-    .controller('AccountCtrl', [
+ .controller('AccountCtrl', [
         '$state', '$scope', 'UserService',   // <-- controller dependencies
         function ($state, $scope, UserService) {
 

@@ -11,9 +11,9 @@
     </ion-nav-buttons>
     <ion-content>
         <ion-list can-swipe="true">
-            <ion-item class="item item-thumbnail-left" ng-repeat="photos in photo" type="item-text-wrap"
+            <ion-item class="item item-thumbnail-left" ng-repeat="photo in photoList" type="item-text-wrap"
                       href="#/tab/list/{{$index}}">
-                <pre>{{photo | json}}</pre>
+                <pre>{{photo.attributes.colors}}</pre>
                 <ion-option-button class="button-assertive" ng-click="doDeleteRow(data.id)">
                     DELETE
                 </ion-option-button>

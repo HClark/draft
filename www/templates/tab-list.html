@@ -1,3 +1,4 @@
+
 <ion-view title="Image Feed">
     <ion-nav-buttons side="left">
         <button class="button" ng-click="doSomeAction()">
@@ -14,7 +15,7 @@
             <ion-item class="item item-thumbnail-left" ng-repeat="photo in photoList" type="item-text-wrap"
                       href="#/tab/list/{{$index}}">
                 <pre>{{photo.attributes.colors}}</pre>
-                <ion-option-button class="button-assertive" ng-click="doDeleteRow(data.id)">
+                <ion-option-button class="button-assertive" ng-click="detail in photoList">
                     DELETE
                 </ion-option-button>
             </ion-item>

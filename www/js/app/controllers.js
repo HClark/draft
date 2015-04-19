@@ -19,8 +19,8 @@
             AppService.findStuff().then(function(_photos){
                 $timeout(function(){
                     $scope.photoList = _photos;
-                    console.log(JSON.stringify($scope.photoList))
-                    $state.go("tab.list-detail", "id" :photoList.detail);
+                    //console.log(JSON.stringify($scope.photoList))
+                   // $state.go("tab.list-detail", "id" :photoList.detail);
                 },0);
 
 

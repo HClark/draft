@@ -1,4 +1,4 @@
 # draft
 
 
-![My image](HClark.github.com/draft/img/data.png)
+![My image](HClark.github.com/draft/data.png)

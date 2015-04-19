@@ -13,8 +13,8 @@
 
         }])
  .controller('ListCtrl', [
-        '$state', '$scope', 'UserService','AppService','$timeout',   // <-- controller dependencies
-        function ($state, $scope, UserService, AppService, $timeout) {
+        '$state', '$scope', 'UserService','AppService','$timeout', '$stateParams',   // <-- controller dependencies
+        function ($state, $scope, UserService, AppService, $timeout, $stateParams) {
 
             AppService.findStuff().then(function(_photos){
                 $timeout(function(){
@@ -27,6 +27,18 @@
 
             }, function(_error){
                 alert(_error)
+            });
+
+            var photos = Parse.Object.extend("photo");
+            var query = new Parse.Query(photos);
+
+            query.get($stateParams.itemId, {
+                sucess: function(photo){
+                    $scope.photoDetail = photo;
+                },
+                error: function(object, error){
+                    alert(error.message);
+                }
             });
 
 

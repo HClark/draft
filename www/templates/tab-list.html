@@ -13,9 +13,9 @@
     <ion-content>
         <ion-list can-swipe="true">
             <ion-item class="item item-thumbnail-left" ng-repeat="photo in photoList" type="item-text-wrap"
-                      href="#/tab/list/{{$index}}">
+                      ui-sref = 'tab.list-detail({itemId: photo.attributes.objectId})' ">
                 <pre>{{photo.attributes.colors}}</pre>
-                <ion-option-button class="button-assertive" ng-click="detail in photoList">
+                <ion-option-button class="button-assertive">
                     DELETE
                 </ion-option-button>
             </ion-item>

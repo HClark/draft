@@ -9,7 +9,7 @@ angular.module('app.services', [])
 				var Photos = Parse.Object.extend('photo');
 				var query = new Parse.Query(Photos);
 				return query.find();
-			} 
+			},
 			findOneItem : function(_id) {
 			    var Photos = Parse.Object.extend('photo');
 			    var query = new Parse.Query(Photos);

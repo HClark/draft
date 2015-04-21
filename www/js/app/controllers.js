@@ -26,19 +26,7 @@
 
 
             }, function(_error){
-                alert(_error)
-            });
-
-            var photos = Parse.Object.extend("photo");
-            var query = new Parse.Query(photos);
-
-            query.get($stateParams.itemId, {
-                sucess: function(photo){
-                    $scope.photoDetail = photo;
-                },
-                error: function(object, error){
-                    alert(error.message);
-                }
+                JSON.stringify(alert(_error));
             });
 
 
@@ -61,8 +49,8 @@
         console.log($stateParams.id);
         AppService.findOneItem($stateParams.itemId).then(function(_photo) {
             $timeout(function() {
-                $scope.photo = _photo;
-                console.log(JSON.stringify($scope.photo, null, 2));
+                $scope.photoList = _photo;
+                console.log(JSON.stringify($scope.detail, null, 2));
             }, 0);
 
         }, function(_error) {

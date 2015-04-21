@@ -1,4 +1,4 @@
-
+s
 <ion-view title="Image Feed">
     <ion-nav-buttons side="left">
         <button class="button" ng-click="doSomeAction()">
@@ -12,8 +12,10 @@
     </ion-nav-buttons>
     <ion-content>
         <ion-list can-swipe="true">
-            <ion-item class="item item-thumbnail-left" ng-repeat="photo in photoList" type="item-text-wrap"
-                      ui-sref = 'tab.list-detail({itemId: photo.attributes.objectId})' ">
+            <ion-item class="item item-thumbnail-left"
+             ng-repeat="photo in photoList" 
+             type="item-text-wrap" 
+             ui-sref = 'tab.list-detail({itemId: photo.id})'>
                 <pre>{{photo.attributes.colors}}</pre>
                 <ion-option-button class="button-assertive">
                     DELETE

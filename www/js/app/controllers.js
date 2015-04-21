@@ -54,3 +54,20 @@
 
 
         }]);
+
+ .controller('ListDetailCtrl', ['$state', '$scope', 'AppService', '$timeout', '$stateParams', // <-- controller dependencies
+    function($state, $scope, AppService, $timeout, $stateParams) {
+
+        console.log($stateParams.id);
+        AppService.findOneItem($stateParams.itemId).then(function(_photo) {
+            $timeout(function() {
+                $scope.photo = _photo;
+                console.log(JSON.stringify($scope.photo, null, 2));
+            }, 0);
+
+        }, function(_error) {
+            alert(JSON.stringify(_error));
+        });
+
+        
+    }]);

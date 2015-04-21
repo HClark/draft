@@ -53,7 +53,7 @@
             });
 
 
-        }]);
+        }])
 
  .controller('ListDetailCtrl', ['$state', '$scope', 'AppService', '$timeout', '$stateParams', // <-- controller dependencies
     function($state, $scope, AppService, $timeout, $stateParams) {
@@ -69,5 +69,5 @@
             alert(JSON.stringify(_error));
         });
 
-        
+
     }]);

@@ -28,8 +28,14 @@
             }, function(_error){
                 JSON.stringify(alert(_error));
             });
-            
-        ])
+
+
+/*,
+        $scope.goNewItem() {
+            $state.go('newItem')
+        }*/
+
+        }])
  .controller('AccountCtrl', [
         '$state', '$scope', 'UserService',   // <-- controller dependencies
         function ($state, $scope, UserService) {

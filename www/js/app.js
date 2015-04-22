@@ -91,8 +91,14 @@ angular.module('starter',
                     }
                 }
             })
-            //.state('t')
-            ;
+            .state('newItem', {
+                url: '/new-item',
+                views: {
+                    templateUrl: 'template/newItem.html',
+                    controller: 'NewitemCtrl'
+                }
+            
+            });
 
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/tab/list');

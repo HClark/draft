@@ -91,12 +91,14 @@ angular.module('starter',
                     }
                 }
             })
-            
-            .state('newItem', {
+
+            .state('tab.newItem', {
                 url: '/new-item',
                 views: {
-                    templateUrl: 'template/newItem.html',
-                    controller: 'NewitemCtrl'
+                    'newItem': {
+                        templateUrl: 'templates/newItem.html',
+                        controller: 'NewItemCtrl'
+                    }
                 }
 
             });

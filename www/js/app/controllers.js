@@ -29,12 +29,6 @@
                 JSON.stringify(alert(_error));
             });
 
-
-/*,
-        $scope.goNewItem() {
-            $state.go('newItem')
-        }*/
-
         }])
  .controller('AccountCtrl', [
         '$state', '$scope', 'UserService',   // <-- controller dependencies
@@ -63,4 +57,16 @@
         });
 
 
-    }]);
+    }])
+
+ .controller('NewItemCtrl' [
+        '$state', '$scope', 'UserService',   // <-- controller dependencies
+        function ($state, $scope, UserService) {
+
+            debugger;
+            UserService.currentUser().then(function (_user) {
+                $scope.user = _user;
+            });
+
+
+        }]);

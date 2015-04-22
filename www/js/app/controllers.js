@@ -28,9 +28,8 @@
             }, function(_error){
                 JSON.stringify(alert(_error));
             });
-
-
-        }])
+            
+        ])
  .controller('AccountCtrl', [
         '$state', '$scope', 'UserService',   // <-- controller dependencies
         function ($state, $scope, UserService) {

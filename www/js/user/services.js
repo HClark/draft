@@ -85,5 +85,7 @@ angular.module('user.services', [])
                     return Parse.User.logOut();
                 }
 
+                
+
             }
         }]);

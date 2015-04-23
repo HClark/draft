@@ -24,10 +24,12 @@ angular.module('app.services', [])
 
 				addition.save(null, {
 					succes: function(addition) {
-						alert('New object created with objectId: ' + addition.id);
+						console.log("Here's a succes");
+						alert('New object created with objectId: ' + addition.objectId)
 					},
-					error: function(addition, error) {
-						alert('Failed to create new object, with error code: ' + error.message);
+					error: function(addition, _error) {
+						console.log("Here's a fail");
+						alert('Failed to create new object, with error code: ' + error.message)
 					}
 				});
 			}

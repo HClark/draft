@@ -69,6 +69,7 @@
 
             $scope.createNew = function() {
                 if ($scope.particulars.colour == "" || $scope.particulars.detail == "") {
+                    alert("Sorry, you didn't input a full entry.")
                     $state.go('tab.list', {});
                 } else {
                     AppService.addOneItem($scope.particulars.colour, $scope.particulars.detail)

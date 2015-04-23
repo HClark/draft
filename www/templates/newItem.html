@@ -1,3 +1,19 @@
 <ion-view title="New Item">
-    New Item
+    <ion-content padding="true" class="has-header">
+ 
+    	<form>
+            <div class="list">
+                <label class="item item-input">
+                    <input type="text" placeholder="Color" ng-model="particulars.colour">
+                </label>
+                <label class="item item-input">
+                    <input type="text" placeholder="Detail" ng-model="particulars.detail">
+                </label>
+            </div>
+
+            <div class="spacer" style="height: 40px;"></div>
+            <a  ng-click="createNew()"  class="button button-stable button-block">Add</a>
+        </form>
+
+    </ion-content>
 </ion-view>

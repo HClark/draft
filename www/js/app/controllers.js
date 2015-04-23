@@ -60,13 +60,20 @@
     }])
 
  .controller('NewItemCtrl', [
-        '$state', '$scope', 'UserService',   // <-- controller dependencies
-        function ($state, $scope, UserService) {
+        '$state', '$scope', 'AppService',  // <-- controller dependencies
+        function ($state, $scope, AppService) {
+            $scope.particulars = {
+                colour: "",
+                detail: ""
+            };
 
-            debugger;
-            UserService.currentUser().then(function (_user) {
-                $scope.user = _user;
-            });
-
+            $scope.createNew = function() {
+                if ($scope.particulars.colour == "" || $scope.particulars.detail == "") {
+                    $state.go('tab.list', {});
+                } else {
+                    AppService.addOneItem($scope.particulars.colour, $scope.particulars.detail)
+                    $state.go('tab.list', {});
+                }
+            };
 
         }]);

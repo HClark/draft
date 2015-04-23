@@ -36,7 +36,7 @@ angular.module('user.services', [])
                  createUser: function (_userParams) {
 
                     var user = new Parse.User();
-                    user.set("username", _userParams.email);
+                    user.set("username", _userParams.username);
                     user.set("password", _userParams.password);
                     user.set("email", _userParams.email);
                     user.set("first_name", _userParams.first_name);

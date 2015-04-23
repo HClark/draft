@@ -65,6 +65,10 @@ angular.module('starter',
             // Each tab has its own nav history stack:
             .state('tab.list', {
                 url: '/list',
+                params: {
+                    forceUpdate: {value: null},
+                    forceUpdate: {value: null, squash: true} 
+                },
                 views: {
                     'tab-list': {
                         templateUrl: 'templates/tab-list.html',

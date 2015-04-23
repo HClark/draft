@@ -16,18 +16,30 @@
         '$state', '$scope', 'UserService','AppService','$timeout', '$stateParams',   // <-- controller dependencies
         function ($state, $scope, UserService, AppService, $timeout, $stateParams) {
 
-            AppService.findStuff().then(function(_photos){
-                $timeout(function(){
-                    $scope.photoList = _photos;
-                    //console.log(JSON.stringify($scope.photoList))
-                   // $state.go("tab.list-detail", "id" :photoList.detail);
-                },0);
+            function updateUI() {
+                AppService.findStuff().then(function(_photos){
+                    $timeout(function(){
+                        $scope.photoList = _photos;
+                        //console.log(JSON.stringify($scope.photoList))
+                       // $state.go("tab.list-detail", "id" :photoList.detail);
+                    },0);
 
 
 
-            }, function(_error){
-                JSON.stringify(alert(_error));
+                }, function(_error){
+                    JSON.stringify(alert(_error));
+                });
+            }
+
+            $scope.$on( "$ionicView.enter", function( scopes, states ) {
+                console.log("$ionicView.enter");
+                console.log('ListCtrl:$stateParams '+JSON.stringify($stateParams));
+
+                if ($stateParams.forceUpdate) {
+                  updateUI();
+                }
             });
+        updateUI()
 
         }])
  .controller('AccountCtrl', [
@@ -72,8 +84,16 @@
                     alert("Sorry, you didn't input a full entry.")
                     $state.go('tab.list', {});
                 } else {
-                    AppService.addOneItem($scope.particulars.colour, $scope.particulars.detail)
-                    $state.go('tab.list', {});
+                    AppService.addOneItem($scope.particulars.colour,$scope.particulars.detail)
+                      .then(function(_newObject) {
+                        console.log(JSON.stringify(_newObject, null, 2));
+
+                        // force an update since I added an item
+                        $state.go('tab.list', {forceUpdate:true});
+                    }, function(_error) {
+                        alert(JSON.stringify(_error));
+                        $state.go('tab.list', {});
+                    });
                 }
             };
 

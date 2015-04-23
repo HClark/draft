@@ -22,16 +22,7 @@ angular.module('app.services', [])
 				addition.set("colors", _colors);
 				addition.set("detail", _detail);
 
-				addition.save(null, {
-					succes: function(addition) {
-						console.log("Here's a succes");
-						alert('New object created with objectId: ' + addition.objectId)
-					},
-					error: function(addition, _error) {
-						console.log("Here's a fail");
-						alert('Failed to create new object, with error code: ' + error.message)
-					}
-				});
+				return addition.save(null, {});
 			}
 		}
 

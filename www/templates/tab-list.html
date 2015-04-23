@@ -16,7 +16,7 @@
              type="item-text-wrap" 
              ui-sref = 'tab.list-detail({itemId: photo.id})'>
                 <pre>{{photo.attributes.colors}}</pre>
-                <ion-option-button class="button-assertive">
+                <ion-option-button class="button-assertive" ng-click="doDeleteItem()">
                     DELETE
                 </ion-option-button>
             </ion-item>

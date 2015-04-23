@@ -76,7 +76,10 @@
         function ($state, $scope, AppService) {
             $scope.particulars = {
                 colour: "",
-                detail: ""
+                detail: "",
+                location:"",
+                time:""
+
             };
 
             $scope.createNew = function() {

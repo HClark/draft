@@ -95,7 +95,7 @@ angular.module('starter',
             .state('tab.newItem', {
                 url: '/new-item',
                 views: {
-                    'newItem': {
+                    'tab-list': {
                         templateUrl: 'templates/newItem.html',
                         controller: 'NewItemCtrl'
                     }

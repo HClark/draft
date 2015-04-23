@@ -59,7 +59,7 @@
 
     }])
 
- .controller('NewItemCtrl' [
+ .controller('NewItemCtrl', [
         '$state', '$scope', 'UserService',   // <-- controller dependencies
         function ($state, $scope, UserService) {
 

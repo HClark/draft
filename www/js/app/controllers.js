@@ -77,16 +77,19 @@
             $scope.particulars = {
                 colour: "",
                 detail: "",
-                //location:"",
-                //starttime:"",
-                time:"",
+                blackburn:null,
+                annex:null,
+                 //time:"",
 
             };
 
+            
 
-             
-     
+            //$scope.particulars=[{blackburn:false}];
+            //$scope.particulars.blackburn=false;
+            //$scope.particulars.annex=false;
 
+        
 
             $scope.createNew = function() {
                 if ($scope.particulars.colour == "" || $scope.particulars.detail == "") {
@@ -94,15 +97,18 @@
                     $state.go('tab.list', {});
                 } else {
 
-                    $scope.time = {};
-                     $scope.time.starttime = new Date().Format("YYYY-MM-DD HH:00");
-                     $scope.time.endtime = new Date().Format("YYYY-MM-DD HH:00");
+                    // $scope.time = {};
+                    // $scope.time.starttime = new Date().Format("YYYY-MM-DD HH:00");
+                    // $scope.time.endtime = new Date().Format("YYYY-MM-DD HH:00");
 
-                     console.log($scope.time.starttime);
+                    //console.log($scope.time.starttime);
 
-                    AppService.addOneItem($scope.particulars.colour,$scope.particulars.detail)
+                    AppService.addOneItem($scope.particulars.colour,$scope.particulars.detail,
+                        $scope.particulars.blackburn,$scope.particulars.blackburn)
                       .then(function(_newObject) {
                         console.log(JSON.stringify(_newObject, null, 2));
+
+
 
                         // force an update since I added an item
                         $state.go('tab.list', {forceUpdate:true});

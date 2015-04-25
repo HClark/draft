@@ -15,12 +15,14 @@ angular.module('app.services', [])
 			    var query = new Parse.Query(Photos);
 			    return query.get(_id);
 			},
-			addOneItem : function(_colors, _detail) {
+			addOneItem : function(_colors, _detail, _blackburn, _annex) {
 				var Photos = Parse.Object.extend('photo');
 				var addition = new Photos();
 
 				addition.set("colors", _colors);
 				addition.set("detail", _detail);
+				addition.set("blackburn", _blackburn);
+				addition.set("annex", _annex);
 				//addition.set("locatoin", location);
 
 				return addition.save(null, {});

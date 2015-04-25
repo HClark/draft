@@ -72,21 +72,34 @@
     }])
 
  .controller('NewItemCtrl', [
-        '$state', '$scope', 'AppService',  // <-- controller dependencies
+        '$state', '$scope', 'AppService', //'st.timepicker'  // <-- controller dependencies
         function ($state, $scope, AppService) {
             $scope.particulars = {
                 colour: "",
                 detail: "",
-                location:"",
-                time:""
+                //location:"",
+                //starttime:"",
+                time:"",
 
             };
+
+
+             
+     
+
 
             $scope.createNew = function() {
                 if ($scope.particulars.colour == "" || $scope.particulars.detail == "") {
                     alert("Sorry, you didn't input a full entry.")
                     $state.go('tab.list', {});
                 } else {
+
+                    $scope.time = {};
+                     $scope.time.starttime = new Date().Format("YYYY-MM-DD HH:00");
+                     $scope.time.endtime = new Date().Format("YYYY-MM-DD HH:00");
+
+                     console.log($scope.time.starttime);
+
                     AppService.addOneItem($scope.particulars.colour,$scope.particulars.detail)
                       .then(function(_newObject) {
                         console.log(JSON.stringify(_newObject, null, 2));

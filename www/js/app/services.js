@@ -21,6 +21,7 @@ angular.module('app.services', [])
 
 				addition.set("colors", _colors);
 				addition.set("detail", _detail);
+				//addition.set("locatoin", location);
 
 				return addition.save(null, {});
 			}
@@ -28,3 +29,5 @@ angular.module('app.services', [])
 
 
 	}]);
+
+//$scope.particulars.starttime = new Date().Format("YYYY-MM-DD HH:00");

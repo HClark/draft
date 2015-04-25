@@ -9,7 +9,7 @@ angular.module('starter',
         'app.controllers',
         'app.services',
         'user.controllers',
-        //'ionic-timepicker',
+        'st.timepicker',
         'user.services'
     ]
 )
@@ -154,4 +154,7 @@ angular.module('starter',
             alert(JSON.stringify(_error));
         });
     }])
+
+
+
     

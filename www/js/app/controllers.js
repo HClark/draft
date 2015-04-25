@@ -5,13 +5,13 @@
  * be used in an application
  */
  angular.module('app.controllers', [])
- .controller('ListDetailCtrl', [
+ /*.controller('ListDetailCtrl', [
         '$state', '$scope', '$stateParams', 'UserService',   // <-- controller dependencies
         function ($state, $scope, $stateParams, UserService) {
 
             $scope.index = $stateParams.itemId;
 
-        }])
+        }])*/
  .controller('ListCtrl', [
         '$state', '$scope', 'UserService','AppService','$timeout', '$stateParams',   // <-- controller dependencies
         function ($state, $scope, UserService, AppService, $timeout, $stateParams) {
@@ -43,14 +43,15 @@
 
         }])
  .controller('AccountCtrl', [
-        '$state', '$scope', 'UserService',   // <-- controller dependencies
-        function ($state, $scope, UserService) {
+        '$state', '$scope', '$stateParams', 'UserService',   // <-- controller dependencies
+        function ($state, $scope, $stateParams, UserService) {
 
             debugger;
             UserService.currentUser().then(function (_user) {
                 $scope.user = _user;
             });
 
+            $scope.index = $stateParams.itemId;
 
         }])
 

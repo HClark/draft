@@ -78,10 +78,14 @@
                 colour: "",
                 detail: "",
                 //location:"",
-                starttime:"",
-                //time:""
+                //starttime:"",
+                time:"",
 
             };
+
+
+             
+     
 
 
             $scope.createNew = function() {
@@ -89,6 +93,13 @@
                     alert("Sorry, you didn't input a full entry.")
                     $state.go('tab.list', {});
                 } else {
+
+                    $scope.time = {};
+                     $scope.time.starttime = new Date().Format("YYYY-MM-DD HH:00");
+                     $scope.time.endtime = new Date().Format("YYYY-MM-DD HH:00");
+
+                     console.log($scope.time.starttime);
+
                     AppService.addOneItem($scope.particulars.colour,$scope.particulars.detail)
                       .then(function(_newObject) {
                         console.log(JSON.stringify(_newObject, null, 2));

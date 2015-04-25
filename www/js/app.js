@@ -9,7 +9,7 @@ angular.module('starter',
         'app.controllers',
         'app.services',
         'user.controllers',
-        'ionic-timepicker',
+        //'ionic-timepicker',
         'user.services'
     ]
 )

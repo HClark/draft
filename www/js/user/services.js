@@ -77,15 +77,16 @@ angular.module('user.services', [])
                  *
                  * @returns {Promise}
                  */
-                logout: function () {
+                logout: function (_callback) {
                     var user = Parse.User.current();
                     if (null !== user) {
                         console.log("logging out user " + user.get("username"));
                     }
-                    return Parse.User.logOut();
-                }
 
-                
+                    Parse.User.logOut();
+                    var currentUser = Parse.User.current();
+                    return currentUser;
+                }
 
             }
         }]);

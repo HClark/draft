@@ -1,9 +1,10 @@
+
 <ion-view title="New Item">
     <ion-content padding="true" class="has-header">
  
     	<form>
             <div class="list">
-                <label class="item item-input">
+                <label class="item item-input ">
                     <input type="text" placeholder="Color" ng-model="particulars.colour">
                 </label>
                 <label class="item item-input">
@@ -11,8 +12,35 @@
                 </label>
             </div>
 
-            <div class="spacer" style="height: 40px;"></div>
-            <a  ng-click="createNew()"  class="button button-stable button-block">Add</a>
+            <p> Location </p>
+               <ul class="list">
+
+              <li class="item item-checkbox">
+                 <label class="checkbox">
+                   <input type="checkbox">
+                 </label>
+                 Blackburn Cafe
+
+
+              </li>
+              
+
+            </ul>
+            <ul class="list">
+
+              <li class="item item-checkbox">
+                 <label class="checkbox">
+                   <input type="checkbox">
+                 </label>
+                 Annex Cafe
+
+
+              </li>
+
+            </ul>
+
+             <a  ng-click="createNew()"  class="button button-outline button-balanced button-block">Add</a>
+
         </form>
 
     </ion-content>

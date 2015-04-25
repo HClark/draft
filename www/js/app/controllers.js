@@ -72,15 +72,17 @@
     }])
 
  .controller('NewItemCtrl', [
-        '$state', '$scope', 'AppService',  // <-- controller dependencies
+        '$state', '$scope', 'AppService', //'st.timepicker'  // <-- controller dependencies
         function ($state, $scope, AppService) {
             $scope.particulars = {
                 colour: "",
                 detail: "",
-                location:"",
-                time:""
+                //location:"",
+                starttime:"",
+                //time:""
 
             };
+
 
             $scope.createNew = function() {
                 if ($scope.particulars.colour == "" || $scope.particulars.detail == "") {

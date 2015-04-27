@@ -33,6 +33,7 @@
 
             $scope.$on( "$ionicView.enter", function( scopes, states ) {
                 console.log("$ionicView.enter");
+
                 console.log('ListCtrl:$stateParams '+JSON.stringify($stateParams));
 
                 if ($stateParams.forceUpdate) {
@@ -58,11 +59,20 @@
  .controller('ListDetailCtrl', ['$state', '$scope', 'AppService', '$timeout', '$stateParams', // <-- controller dependencies
     function($state, $scope, AppService, $timeout, $stateParams) {
 
-        console.log($stateParams.id);
+       console.log($stateParams.id);
+       
         AppService.findOneItem($stateParams.itemId).then(function(_photo) {
             $timeout(function() {
                 $scope.photoList = _photo;
                 console.log(JSON.stringify($scope.detail, null, 2));
+                //var location = 
+
+                var okay = "yes!!";
+                var test = 1;
+                 if(test){
+                   var okay = "yes!!"; 
+                 }  
+
             }, 0);
 
         }, function(_error) {
@@ -80,6 +90,7 @@
                 detail: "",
                 blackburn:null,
                 annex:null,
+                vendor: user,
                  //time:"",
 
             };

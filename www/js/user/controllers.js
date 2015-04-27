@@ -63,7 +63,7 @@ angular.module('user.controllers', [])
 
                 UserService.init();
 
-                UserService.createUser($scope.creds).then(function (_data) {
+                UserService.createUser($scope.creds).then(function (_zdata) {
                     $scope.user = _data;
 
                     alert("Success Creating User Account ");

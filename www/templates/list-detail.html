@@ -4,32 +4,44 @@
   The ListCtrl pulls data from the ImageService service (service.js)
   The ImageService service returns an array of image data
 -->
-<ion-view title="Hillcycle">
-    <ion-content has-header="true" padding="true">
-        <ion-item>
-        <div class="card">
-          <div class="item item-divider" ng-if="photo.attributes.annex">
-            <!--ion-item ng-if="photo.attributes.annex">
-             Meal Swipe to <strong>{{photo.attributes.annx}}</strong> cafe
-            </ion-item-->
-            Meal Swipe to Annex Cafe
-          </div>
-          <div class="item item-divider" ng-if="photo.attributes.blackburn">
-            <!--ion-item ng-if="photo.attributes.annex">
-             Meal Swipe to <strong>{{photo.attributes.annx}}</strong> cafe
-            </ion-item-->
-            Meal Swipe to Blackburn Cafe
-          </div>
-          <div class="item item-text-wrap">
-            <strong>{{photo.attributes.detail}}</strong>
-
-          </div>
-          <div class="item item-divider">
-            Footer 
-          </div>
+<ion-view title="Hillcycle" class="custom">
+    <ion-content has-header="true"  class="center" >
+       
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+      <div class="card">
+        <div ng-switch="photo.attributes.both" class="item item-divider padding scroll-detail" class="row">
+             <div ng-switch-when="0">
+             Meal Swipe to Annex Cafe
+             </div>
+             <div ng-switch-when="1" >
+             Meal Swipe to Blackburn Cafe
+             </div>
+             <div ng-switch-when="2">
+             Meal Swipe to Blackburn or Annex Cafe
+             </div>
+<!-- TODO: S E T default-->
+            <div ng-switch-default style="width: 50px; background-color: lightgray; text-align: center;">
+            error no 15 
+             </div>
         </div>
+        <div class="item item-text-wrap">
+            <strong>{{photo.attributes.detail}}</strong>
+        </div>
+        <div class="item item-divider">
+            Footer 
+        </div>
+      </div>
+
+         <br/><br/>
            
-        </ion-item>
+      <button class="button button-balanced button-outline ">
+              eat
+            </button>
+    
     	
        
     </ion-content>

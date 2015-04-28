@@ -52,8 +52,6 @@
                 $scope.user = _user;
             });
 
-            $scope.index = $stateParams.itemId;
-
         }])
 
  .controller('ListDetailCtrl', ['$state', '$scope', 'AppService', '$timeout', '$stateParams', // <-- controller dependencies
@@ -88,11 +86,11 @@
             $scope.particulars = {
                 colour: "",
                 detail: "",
-                blackburn:null,
-                annex:null,
-                vendor: user,
-                 //time:"",
-
+                blackburn: false,
+                annex: false,
+                breakfast: false,
+                lunch: false,
+                dinner: false
             };
 
             
@@ -116,7 +114,8 @@
                     //console.log($scope.time.starttime);
 
                     AppService.addOneItem($scope.particulars.colour,$scope.particulars.detail,
-                        $scope.particulars.blackburn,$scope.particulars.blackburn)
+                        $scope.particulars.blackburn,$scope.particulars.annex, $scope.particulars.breakfast,
+                        $scope.particulars.lunch, $scope.particulars.dinner)
                       .then(function(_newObject) {
                         console.log(JSON.stringify(_newObject, null, 2));
 

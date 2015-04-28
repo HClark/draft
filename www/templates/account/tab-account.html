@@ -6,7 +6,8 @@
         </ion-item>
         <ion-item>
         	<div class="item item-text-wrap">
-            	<pre>{{User.first_name}}</pre>
+            	<pre>Name: {{user.attributes.first_name + " "
+                    + user.attributes.last_name}}</pre>
             </div>
     	</ion-item>
     </ion-content>

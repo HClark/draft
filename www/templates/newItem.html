@@ -17,14 +17,14 @@
 
               <li class="item item-checkbox">
                  <label class="checkbox">
-                   <input type="checkbox" placeholder="blackburn" ng-model="particulars.blackburn">
+                   <input type="checkbox" ng-model="particulars.blackburn">
                  </label>
-                 Blackburn Cafe
+                 Blackburn Cafe/Punchout
 
               </li>
               <li class="item item-checkbox">
                  <label class="checkbox">
-                   <input type="checkbox" placeholder="annex" ng-model="particulars.annex">
+                   <input type="checkbox" ng-model="particulars.annex">
                  </label>
                  Annex Cafe
 
@@ -32,9 +32,30 @@
 
             </ul>
 
-             <div st-timepicker st-time="time.starttime" st-class="button button-calm">
-                Select Time
-             </div>
+            <p> Meal Time </p>
+               <ul class="list">
+
+              <li class="item item-checkbox">
+                 <label class="checkbox">
+                   <input type="checkbox" ng-model="particulars.breakfast">
+                 </label>
+                 Breakfast
+              </li>
+             
+              <li class="item item-checkbox">
+                 <label class="checkbox">
+                   <input type="checkbox" ng-model="particulars.lunch">
+                 </label>
+                 Lunch
+              </li>
+
+              <li class="item item-checkbox">
+                 <label class="checkbox">
+                   <input type="checkbox" ng-model="particulars.dinner">
+                 </label>
+                 Dinner
+              </li>
+            </ul>
 
              <a  ng-click="createNew()"  class="button button-outline button-balanced button-block">Add</a>
 

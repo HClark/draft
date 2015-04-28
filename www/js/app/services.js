@@ -15,6 +15,12 @@ angular.module('app.services', [])
 			    var query = new Parse.Query(Photos);
 			    return query.get(_id);
 			},
+			findUserItems : function() {
+			    var Photos = Parse.Object.extend('photo');
+			    var query = new Parse.Query(Photos);
+			    query.equalTo("createdBy", Parse.User.current());
+			    return query.find();
+			},
 			addOneItem : function(_colors, _detail, _blackburn, _annex, _breakfast, _lunch, _dinner) {
 				var Photos = Parse.Object.extend('photo');
 				var addition = new Photos();
@@ -26,6 +32,7 @@ angular.module('app.services', [])
 				addition.set("breakfast", _breakfast);
 				addition.set("lunch", _lunch);
 				addition.set("dinner", _dinner);
+				addition.set("createdBy", Parse.User.current());
 
 				if (_blackburn && !_annex) {
 					addition.set("both",0);

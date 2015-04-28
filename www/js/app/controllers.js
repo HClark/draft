@@ -44,13 +44,24 @@
 
         }])
  .controller('AccountCtrl', [
-        '$state', '$scope', '$stateParams', 'UserService',   // <-- controller dependencies
-        function ($state, $scope, $stateParams, UserService) {
+        '$state', '$scope', '$stateParams', 'UserService', 'AppService', '$timeout',   // <-- controller dependencies
+        function ($state, $scope, $stateParams, UserService, AppService, $timeout) {
 
             debugger;
             UserService.currentUser().then(function (_user) {
                 $scope.user = _user;
             });
+
+
+            AppService.findUserItems($scope.user).then(function(_photos){
+                    $timeout(function(){
+                        $scope.userPhotoList = _photos;
+                    },0);
+
+
+                }, function(_error){
+                    JSON.stringify(alert(_error));
+                });
 
         }])
 

@@ -2,8 +2,8 @@
 <ion-view title="New Item">
     <ion-content padding="true" class="has-header">
  
-    	<form>
-            <div class="list">
+      <form>
+            <div class="list" ng-controller="NewItemCtrl">
                 <label class="item item-input ">
                     <input type="text" placeholder="Color" ng-model="particulars.colour">
                 </label>
@@ -12,6 +12,13 @@
                 </label>
             </div>
 
+            <div ng-controller="ModalCtrl">
+             <button class="button button-balanced button-outline button-block" ng-click="openDatePicker()">
+               From date
+          </button>
+        </div>
+
+          <div id="newPost">
             <p> Location </p>
                <ul class="list">
 
@@ -31,31 +38,31 @@
               </li>
 
             </ul>
+         </div> 
 
-            <p> Meal Time </p>
-               <ul class="list">
 
-              <li class="item item-checkbox">
-                 <label class="checkbox">
-                   <input type="checkbox" ng-model="particulars.breakfast">
-                 </label>
-                 Breakfast
-              </li>
-             
-              <li class="item item-checkbox">
-                 <label class="checkbox">
-                   <input type="checkbox" ng-model="particulars.lunch">
-                 </label>
-                 Lunch
-              </li>
+<script id="modal.html" type="text/ng-template">
+      <div class="modal" ng-controller="ModalCtrl">
+        <ion-header-bar class="bar bar-header bar-balanced">
+          <h1 class="title">New Contact</h1>
+          <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+        </ion-header-bar>
+        <ion-content>
+          <div class="padding">
+            <div class="list">
+              <label class="item item-input" ng-click="openDatePicker()">
+                <span class="input-label">From date</span>
+                <input type="text" ng-model="newUser.formattedBirthDate">
+              </label>
+      
+              <button class="button button-full button-balanced button-outline " ng-click="createContact()">Create</button>
+            </div>
+          </div>
+        </ion-content>
+      </div>
+    </script>
 
-              <li class="item item-checkbox">
-                 <label class="checkbox">
-                   <input type="checkbox" ng-model="particulars.dinner">
-                 </label>
-                 Dinner
-              </li>
-            </ul>
+          
 
              <a  ng-click="createNew()"  class="button button-outline button-balanced button-block">Add</a>
 

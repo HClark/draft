@@ -63,6 +63,12 @@
                     JSON.stringify(alert(_error));
                 });
 
+            $scope.doDeleteItem = function () {
+                //var deletedItem = AppService.findOneItem($stateParams.itemId);
+               //AppService.deleteOneItem(deletedItem.id);
+               alert("Deleting somehting")
+            };
+
         }])
 
  .controller('ListDetailCtrl', ['$state', '$scope', 'AppService', '$timeout', '$stateParams', // <-- controller dependencies
@@ -111,7 +117,6 @@
             //$scope.particulars.annex=false;
 
         
-
             $scope.createNew = function() {
                 if ($scope.particulars.colour == "" || $scope.particulars.detail == "") {
                     alert("Sorry, you didn't input a full entry.")

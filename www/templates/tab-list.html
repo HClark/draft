@@ -10,13 +10,13 @@
         </button>
     </ion-nav-buttons>
     <ion-content>
-        <ion-list can-swipe="true">
-            <ion-item class="item item-thumbnail-left"
-             ng-repeat="photo in photoList" 
-             type="item-text-wrap" 
-             ui-sref = 'tab.list-detail({itemId: photo.id})'>
-                <pre>{{photo.attributes.colors}}</pre>
-            </ion-item>
-        </ion-list>
+            <ion-list can-swipe="true">
+                <ion-item class="item item-thumbnail-left"
+                 ng-repeat="photo in photoList" 
+                 type="item-text-wrap" 
+                 ui-sref = 'tab.list-detail({itemId: photo.id})'>
+                    <pre>{{photo.attributes.colors}}</pre>
+                </ion-item>
+            </ion-list>
     </ion-content>
 </ion-view>

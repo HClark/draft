@@ -22,28 +22,24 @@ angular.module('app.services', [])
 			    return query.find();
 			},
 			/*deleteOneItem: function(_deleteThis) {
-				var Photos = Parse.Object.extend('photo');
+				/*var Photos = Parse.Object.extend('photo');
 				var query = new Parse.Query(Photos);
-				var item = query.get(_deleteThis);
-				item.destroy({
-					success: function(item) {
-						console.log("item deleted");
+				query.get(_deleteThis, {
+					success: function(_deleteThis) {
+						console.log("Found the object to delete.")
+						_deleteThis.destroy({});
 					},
-					error: function(item, error) {
-						console.log("item did not delete" + error);
+					error: function(object, error) {
+						console.log("Nope, didn't find it. Try again.")
 					}
 				});
-/*
 				_deleteThis.destroy({
 					success: function(_deleteThis) {
-					    console.log("The object was deleted from the Parse Cloud.");
-					},
-					error: function(_deleteThis, error) {
-					    console.log("The delete failed.");
-					    // error is a Parse.Error with an error code and message.
-					}*/
 
-			//},
+					}
+				})
+
+			},*/
 			addOneItem : function(_colors, _detail, _blackburn, _annex, _breakfast, _lunch, _dinner) {
 				var Photos = Parse.Object.extend('photo');
 				var addition = new Photos();

@@ -13,8 +13,8 @@
 
         }])*/
  .controller('ListCtrl', [
-        '$state', '$scope', 'UserService','AppService','$timeout', '$stateParams',   // <-- controller dependencies
-        function ($state, $scope, UserService, AppService, $timeout, $stateParams) {
+        '$state', '$scope', 'UserService','AppService','$timeout', '$stateParams', '$http',  // <-- controller dependencies
+        function ($state, $scope, UserService, AppService, $timeout, $stateParams, $http) {
 
             function updateUI() {
                 AppService.findStuff().then(function(_photos){
@@ -57,17 +57,37 @@
                     $timeout(function(){
                         $scope.userPhotoList = _photos;
                     },0);
-
-
                 }, function(_error){
                     JSON.stringify(alert(_error));
                 });
 
-            $scope.doDeleteItem = function () {
-                //var deletedItem = AppService.findOneItem($stateParams.itemId);
-               //AppService.deleteOneItem(deletedItem.id);
-               alert("Deleting somehting")
-            };
+            /*$scope.doDeleteItem = function () {
+                var deletedItem = AppService.findOneItem($stateParams.itemId);
+                AppService.deleteOneItem(deletedItem);
+                alert("Deleting somehting")
+            };*/
+
+            $scope.doDeleteItem = function(myObject){
+                myObject.destroy({
+                  success: function(myObject) {
+                    // The object was deleted from the Parse Cloud.
+                        alert("You have deleted session this item");
+                        query.find({
+                          success: function(results) {
+                              $scope.sessions = results;
+                          },
+                          error: function(error) {
+                            alert("Error: " + error.code + " " + error.message);
+                          }
+                        });
+                  },
+                  error: function(myObject, error) {
+                    // The delete failed.
+                    // error is a Parse.Error with an error code and message.
+                      alert(error);
+                  }
+                });
+            }
 
         }])
 

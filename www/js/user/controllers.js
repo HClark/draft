@@ -74,4 +74,37 @@ angular.module('user.controllers', [])
                     alert("Error Creating User Account " + _error.debug)
                 });
             }
+        }])
+
+    .controller('UpdateCtrl', [
+        '$state', '$scope', 'UserService',
+        function ($state, $scope, UserService) {
+
+            UserService.currentUser().then(function (_user) {
+                $scope.user = _user;
+            });
+
+            $scope.tempCreds = {
+                first_name: "",
+                last_name: "",
+                email: ""
+            };
+
+            $scope.doUpdateAcct = function () {
+                if ($scope.tempCreds.first_name !== "") {
+                    $scope.user.set("first_name", $scope.tempCreds.first_name);
+                    alert("Success!");
+                }
+                if ($scope.tempCreds.last_name !== "") {
+                    $scope.user.set("last_name", $scope.tempCreds.last_name);
+                    alert("Success?");
+                }
+                if ($scope.tempCreds.email !== "") {
+                    $scope.user.set("email", $scope.tempCreds.email);;
+                    alert("It's freezing.");
+                }
+                $scope.user.save();
+                alert("Your information has been saved!");
+                $state.go('tab.account');
+            };
         }]);

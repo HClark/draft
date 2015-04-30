@@ -1,25 +1,29 @@
-<ion-view title="Update User Information">
+<ion-view title="Update Account Information">
     <ion-content padding="true" scroll="true" class="has-header">
-        
+
+        <ion-item>
+            <pre>{{user | json}}</pre>
+        </ion-item>
+
         <form>
             <ion-list>
-
                 <label class="item item-input">
                     <span class="input-label">First Name</span>
-                    <input type="text" placeholder=""  ng-model="tempCreds.first_name">
+                    <input type="text" placeholder="{{user.attributes.first_name}}"  ng-model="tempCreds.first_name">
                 </label>
                 <label class="item item-input">
                     <span class="input-label">Last Name</span>
-                    <input type="text" placeholder="Last Name" ng-model="creds.last_name">
+                    <input type="text" placeholder="{{user.attributes.last_name}}" ng-model="tempCreds.last_name">
                 </label>
                 <label class="item item-input">
                     <span class="input-label">Email</span>
-                    <input type="text" placeholder="email address" ng-model="creds.email">
+                    <input type="text" placeholder="{{user.attributes.email}}" ng-model="tempCreds.email">
                 </label>
-
             </ion-list>
-            <button class="button button-stable button-block"
-                    ng-click="signUpUser()">Save</button>
+
+            <button class="button button-positive button-block"
+                    ng-click="doUpdateAcct()">Save</button>
+
         </form>
 
     </ion-content>

@@ -5,13 +5,7 @@
  * be used in an application
  */
  angular.module('app.controllers', [])
- /*.controller('ListDetailCtrl', [
-        '$state', '$scope', '$stateParams', 'UserService',   // <-- controller dependencies
-        function ($state, $scope, $stateParams, UserService) {
 
-            $scope.index = $stateParams.itemId;
-
-        }])*/
  .controller('ListCtrl', [
         '$state', '$scope', 'UserService','AppService','$timeout', '$stateParams', '$http',  // <-- controller dependencies
         function ($state, $scope, UserService, AppService, $timeout, $stateParams, $http) {
@@ -91,40 +85,7 @@
 
         }])
 
-.controller('ModalCtrl', function($scope, $ionicPopup, $filter) {
-  
-  $scope.newUser = {};
 
-  $scope.$watch('newUser.birthDate', function(unformattedDate){
-    $scope.newUser.formattedBirthDate = $filter('date')(unformattedDate, 'dd/MM/yyyy HH:mm');
-  });
-
-  $scope.createContact = function() {
-    console.log('Create Contact', $scope.newUser);
-    $scope.modal.hide();
-  };
-    
-  $scope.openDatePicker = function() {
-    $scope.tmp = {};
-    $scope.tmp.newDate = $scope.newUser.birthDate;
-    
-    var birthDatePopup = $ionicPopup.show({
-     template: '<datetimepicker ng-model="tmp.newDate"></datetimepicker>',
-     title: "Birth date",
-     scope: $scope,
-     buttons: [
-       { text: 'Cancel' },
-       {
-         text: '<b>Save</b>',
-         type: 'button-positive',
-         onTap: function(e) {
-           $scope.newUser.birthDate = $scope.tmp.newDate;
-         }
-       }
-     ]
-    });
-  }
-})
 
  .controller('ListDetailCtrl', ['$state', '$scope', 'AppService', '$timeout', '$stateParams', // <-- controller dependencies
     function($state, $scope, AppService, $timeout, $stateParams) {
@@ -151,43 +112,6 @@
 
 
     }])
-
-
- .controller('ModalCtrl', function($scope, $ionicPopup, $filter) {
-  
-  $scope.newUser = {};
-
-  $scope.$watch('newUser.birthDate', function(unformattedDate){
-    $scope.newUser.formattedBirthDate = $filter('date')(unformattedDate, 'dd/MM/yyyy HH:mm');
-  });
-
-  $scope.createContact = function() {
-    console.log('Create Contact', $scope.newUser);
-    $scope.modal.hide();
-  };
-    
-  $scope.openDatePicker = function() {
-    $scope.tmp = {};
-    $scope.tmp.newDate = $scope.newUser.birthDate;
-    
-    var birthDatePopup = $ionicPopup.show({
-     template: '<datetimepicker ng-model="tmp.newDate"></datetimepicker>',
-     title: "Birth date",
-     scope: $scope,
-     buttons: [
-       { text: 'Cancel' },
-       {
-         text: '<b>Save</b>',
-         type: 'button-positive',
-         onTap: function(e) {
-           $scope.newUser.birthDate = $scope.tmp.newDate;
-         }
-       }
-     ]
-    });
-  }
-})
-
 
  .controller('NewItemCtrl', [
         '$state', '$scope', 'AppService', //'st.timepicker'  // <-- controller dependencies

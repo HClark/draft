@@ -22,6 +22,29 @@ angular.module('app.services', [])
 			    return query.find();
 			},
 			deleteOneItem: function(_deleteThis) {
+				/*
+				 myObject.destroy({
+                  success: function(_deleteThis) {
+                    // The object was deleted from the Parse Cloud.
+                        alert("You have deleted session this item");
+                        query.find({
+                          success: function(results) {
+                              $scope.sessions = results;
+                              console.log(results);
+                          },
+                          error: function(error) {
+                            alert("Error: " + error.code + " " + error.message);
+                          }
+                        });
+                  },
+                  error: function(myObject, error) {
+                    // The delete failed.
+                    // error is a Parse.Error with an error code and message.
+                      alert(error);
+                  }
+                }); */
+
+
 				//typeof _deleteThis;
 				console.log(Object.keys(_deleteThis));
 				var Photos = Parse.Object.extend('photo');

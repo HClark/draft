@@ -61,34 +61,16 @@
                 alert("Deleting somehting")
             };*/
 
-            $scope.doDeleteItem = function(myObject){
-                typeof _deleteThis;
-                myObject.destroy({
-                  success: function(myObject) {
-                    // The object was deleted from the Parse Cloud.
-                        alert("You have deleted session this item");
-                        query.find({
-                          success: function(results) {
-                              $scope.sessions = results;
-                          },
-                          error: function(error) {
-                            alert("Error: " + error.code + " " + error.message);
-                          }
-                        });
-                  },
-                  error: function(myObject, error) {
-                    // The delete failed.
-                    // error is a Parse.Error with an error code and message.
-                      alert(error);
-                  }
-                });
-            }
-
-            $scope.goToUpdate = function () {
-              $state.go('update-account')
-              console.log("You there yet?")
-            }
-
+            $scope.doDeleteItem = function (myObject) {
+              AppService.deleteOneItem(myObject) ({
+                success: function(results) {
+                  $scope.sessions = results;
+                },
+                error: function(error) {
+                  alert("Error: " + error.code + " " + error.message);
+                }
+              });
+            };
         }])
 
 

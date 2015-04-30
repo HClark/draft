@@ -21,7 +21,7 @@ angular.module('app.services', [])
 			    query.equalTo("createdBy", Parse.User.current());
 			    return query.find();
 			},
-			deleteOneItem: function(_deleteThis) {
+			deleteOneItem : function(_deleteThis) {
 				/*
 				 myObject.destroy({
                   success: function(_deleteThis) {
@@ -46,10 +46,10 @@ angular.module('app.services', [])
 
 
 				//typeof _deleteThis;
-				console.log(Object.keys(_deleteThis));
-				var Photos = Parse.Object.extend('photo');
-				var query = new Parse.Query(Photos);
-				query.get(_deleteThis, {
+				//console.log(Object.keys(_deleteThis));
+				//var Photos = Parse.Object.extend('photo');
+				//var query = new Parse.Query(Photos);
+				/*query.get(_deleteThis, {
 					success: function(_deleteThis) {
 						console.log("Found the object to delete.")
 						_deleteThis.destroy({});
@@ -57,10 +57,10 @@ angular.module('app.services', [])
 					error: function(object, error) {
 						console.log("Nope, didn't find it. Try again.")
 					}
-				});
+				});*/
 				_deleteThis.destroy({
 					success: function(_deleteThis) {
-
+						alert("I've deleted something");
 					}
 				})
 
@@ -89,7 +89,11 @@ angular.module('app.services', [])
 				}
 				
 				return addition.save(null, {});
+			},
+			updateItemReq : function() {
+
 			}
+
 		}
 
 

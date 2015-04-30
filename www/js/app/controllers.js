@@ -14,8 +14,7 @@
                 AppService.findStuff().then(function(_photos){
                     $timeout(function(){
                         $scope.photoList = _photos;
-                        console.log(typeof $scope.photoList);
-                        console.log(JSON.stringify($scope.photoList))
+                        //console.log(JSON.stringify($scope.photoList))
                        // $state.go("tab.list-detail", "id" :photoList.detail);
                     },0);
 
@@ -76,15 +75,14 @@
 
 
 
- .controller('ListDetailCtrl', ['$state', '$scope', 'AppService', '$timeout', '$stateParams', // <-- controller dependencies
-    function($state, $scope, AppService, $timeout, $stateParams) {
+ .controller('ListDetailCtrl', ['$state', '$scope', 'AppService', '$timeout', '$stateParams', 'UserService', // <-- controller dependencies
+    function($state, $scope, AppService, $timeout, $stateParams, UserService) {
 
-       console.log($stateParams.id);
+       //console.log($stateParams.id);
        
-        AppService.findOneItem($stateParams.itemId).then(function(_photo) {
+        /*AppService.findOneItem($stateParams.itemId).then(function(_photo) {
             $timeout(function() {
                 $scope.photoList = _photo;
-                console.log(typeof $scope.photoList);
                 console.log(JSON.stringify($scope.detail, null, 2));
                 //var location = 
 
@@ -98,9 +96,18 @@
 
         }, function(_error) {
             alert(JSON.stringify(_error));
-        });
-
-
+        });*/
+      $scope.doRequest = function () {
+        alert("I am a button!");
+        /*var thisItem = AppService.findOneItem($stateParams.itemId);
+        console.log($stateParams.id);
+        console.log(thisItem.colors);
+        thisItem.set("requestor", UserService.currentUser());*/
+ /*       $scope.photo = [];
+        $scope.Add = function () {
+          $scope.photo.push({requestor: })
+        }*/
+      };
     }])
 
  .controller('NewItemCtrl', [

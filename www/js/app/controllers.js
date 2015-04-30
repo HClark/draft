@@ -62,6 +62,7 @@
             };*/
 
             $scope.doDeleteItem = function(myObject){
+                typeof _deleteThis;
                 myObject.destroy({
                   success: function(myObject) {
                     // The object was deleted from the Parse Cloud.

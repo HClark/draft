@@ -22,6 +22,8 @@ angular.module('app.services', [])
 			    return query.find();
 			},
 			deleteOneItem: function(_deleteThis) {
+				//typeof _deleteThis;
+				console.log(Object.keys(_deleteThis));
 				var Photos = Parse.Object.extend('photo');
 				var query = new Parse.Query(Photos);
 				query.get(_deleteThis, {

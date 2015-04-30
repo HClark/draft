@@ -14,7 +14,8 @@
                 AppService.findStuff().then(function(_photos){
                     $timeout(function(){
                         $scope.photoList = _photos;
-                        //console.log(JSON.stringify($scope.photoList))
+                        console.log(typeof $scope.photoList);
+                        console.log(JSON.stringify($scope.photoList))
                        // $state.go("tab.list-detail", "id" :photoList.detail);
                     },0);
 
@@ -83,6 +84,7 @@
         AppService.findOneItem($stateParams.itemId).then(function(_photo) {
             $timeout(function() {
                 $scope.photoList = _photo;
+                console.log(typeof $scope.photoList);
                 console.log(JSON.stringify($scope.detail, null, 2));
                 //var location = 
 

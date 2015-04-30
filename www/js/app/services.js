@@ -22,7 +22,7 @@ angular.module('app.services', [])
 			    return query.find();
 			},
 			deleteOneItem: function(_deleteThis) {
-				/*var Photos = Parse.Object.extend('photo');
+				var Photos = Parse.Object.extend('photo');
 				var query = new Parse.Query(Photos);
 				query.get(_deleteThis, {
 					success: function(_deleteThis) {

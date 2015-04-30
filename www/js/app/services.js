@@ -21,7 +21,7 @@ angular.module('app.services', [])
 			    query.equalTo("createdBy", Parse.User.current());
 			    return query.find();
 			},
-			/*deleteOneItem: function(_deleteThis) {
+			deleteOneItem: function(_deleteThis) {
 				/*var Photos = Parse.Object.extend('photo');
 				var query = new Parse.Query(Photos);
 				query.get(_deleteThis, {
@@ -39,7 +39,7 @@ angular.module('app.services', [])
 					}
 				})
 
-			},*/
+			},
 			addOneItem : function(_colors, _detail, _blackburn, _annex, _breakfast, _lunch, _dinner) {
 				var Photos = Parse.Object.extend('photo');
 				var addition = new Photos();

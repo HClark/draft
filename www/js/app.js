@@ -97,6 +97,16 @@ angular.module('starter',
                 }
             })
 
+            .state('tab.update-account', {
+                url: '/update-account',
+                views: {
+                    'tab-account': {
+                        templateUrl: 'templates/account/update-account.html',
+                        controller: 'UpdateCtrl'
+                    }
+                }
+            })
+
             .state('tab.newItem', {
                 url: '/new-item',
                 views: {

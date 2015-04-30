@@ -84,6 +84,11 @@
                 });
             }
 
+            $scope.goToUpdate = function () {
+              $state.go('update-account')
+              console.log("You there yet?")
+            }
+
         }])
 
 

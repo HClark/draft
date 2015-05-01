@@ -1,7 +1,7 @@
 <ion-view title="Account Settings">
     </ion-nav-buttons>
-    <ion-content class="padding">
-     <ion-refresher on refresh="doRefresh()"></ion-refresher>
+    <ion-content class="padding" has-header="true" >
+    
         <!--ion-item>
             <pre>{{user | json}}</pre>
         </ion-item-->
@@ -18,23 +18,55 @@
         </br>
 
         <ion-list can-swipe="true">
+
             <ion-item class="item item-thumbnail-left"
              ng-repeat="photo in userPhotoList" 
-             type="item-text-wrap" 
-             >
-             <!--
-            
-            A D D ME back ___ address to new details page!!!
-            
-             ui-sref = 'tab.list-detail({itemId: photo.id})'-->
-                <pre>{{photo.attributes.colors}}</pre>
+             type="item-text-wrap" ng-if="photo.attributes.breakfast">
+
+                <pre > 
+                    breakfast at cafe 
+                  <!--  delete does remove entry from parse!
+              -->
+                </pre>
                 <ion-option-button class="button button-balanced button-block" ng-click="doDeleteItem(photo)">
-                    DELETE
+                    DELETEed
                 </ion-option-button>
             </ion-item>
+
+
+            <ion-item class="item item-thumbnail-left"
+             ng-repeat="photo in userPhotoList" 
+             type="item-text-wrap" ng-if="photo.attributes.lunch">
+
+                lunch at  cafe
+                            
+                <!-- delete does remove entry from parse!
+              -->            
+                <!--pre>{{photo.attributes.colors}}  </pre -->
+                <ion-option-button class="button button-balanced button-block" ng-click="doDeleteItem(photo)">
+                    DELETEed
+                </ion-option-button>
+            </ion-item>
+
+            <ion-item class="item item-thumbnail-left"
+             ng-repeat="photo in userPhotoList" 
+             type="item-text-wrap" ng-if="photo.attributes.dinner">
+
+                Dinner at  cafe
+                <!-- 
+
+              -->
+                <!--pre>{{photo.attributes.colors}}</pre-->
+                <ion-option-button class="button button-balanced button-block" ng-click="doDeleteItem(photo)">
+                    DELETEed
+                </ion-option-button>
+            </ion-item>
+
+
+
         </ion-list>
 
-        <button class="button button-outline button-balanced button-block" ui-sref='tab.update-account'>
+        <button class="button button-outline button-balanced button-block icon icon-left ion-gear-a" ui-sref='tab.update-account'>
         Open Account Settings
     </button>
 

@@ -10,3 +10,9 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+
+
+.custom-icon {
+  font-size: 64px;
+  color : red;
+}

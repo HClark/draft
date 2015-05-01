@@ -1,24 +1,26 @@
 <ion-view ng-controller="LoginController" title="Hillcycle">
-    <ion-nav-buttons side="left">
-        <button class="button" ui-sref='tab.newItem'>
-            New Item
-        </button>
-    </ion-nav-buttons>
+
+        
+ 
     <ion-nav-buttons side="right">
-        <button class="button" ng-click="doLogoutAction()">
+        <button class="button button-clear button-balanced" ng-click="doLogoutAction()">
             Logout
         </button>
     </ion-nav-buttons>
     <ion-content padding="true">
+
+        [click on dinner posts for details]
         <ion-refresher on refresh="doRefresh()"></ion-refresher>
                 </br>                
 
                 Breakfast Posts
+
                 <ion-item >
                     <ion-list ng-repeat="photo in photoList" 
                     ui-sref = 'tab.list-detail({itemId: photo.id})' >
                         <a ng-if="photo.attributes.breakfast">
                             <strong> from {{photo.attributes.createdBy}} </strong>
+                            <!-- attemp to show username that posted meal swipe-->
                         <hr>
                          </a>   
                     </ion-list>
@@ -31,6 +33,7 @@
                     ui-sref = 'tab.list-detail({itemId: photo.id})' >
                         <a ng-if="photo.attributes.lunch">
                             <strong> from {{photo.attributes.createdBy}} </strong>
+                            <!-- attemp to show username that posted meal swipe-->
                         <hr>
                          </a>                
                     </ion-list>
@@ -43,10 +46,15 @@
                     ui-sref = 'tab.list-detail({itemId: photo.id})' >
                         <a ng-if="photo.attributes.dinner">
                             <strong> from {{photo.attributes.createdBy}} </strong>
+                            <!-- attemp to show username that posted meal swipe-->
                         <hr>
                         </a>                
                     </ion-list>
                 </ion-item>
+
+                <button class="button button-balanced button-outline button-block" ui-sref='tab.newItem'>
+            New Post
+        </button>
             
     </ion-content>
 </ion-view>

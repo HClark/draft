@@ -116,6 +116,16 @@ angular.module('starter',
                     }
                 }
 
+            })
+            .state('tab.confirm', {
+                url: '/confirm',
+                views: {
+                    'tab-list': {
+                        templateUrl: 'templates/confirm.html',
+                        controller: 'ListDetailCtrl'
+                    }
+                }
+
             });
 
         // if none of the above states are matched, use this as the fallback
@@ -170,11 +180,12 @@ angular.module('starter',
             }, 0);
 
         }, function(_error) {
-            alert(JSON.stringify(_error));
+            //alert() //JSON.stringify(_error));
         });
 
          $scope.doRequest = function () {
-        alert("I am a button!");
+        $state.go('tab.confirm', {});
+
         /*var thisItem = AppService.findOneItem($stateParams.itemId);
         console.log($stateParams.id);
         console.log(thisItem.colors);

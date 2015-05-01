@@ -134,10 +134,7 @@
 
             // S H O U L D this alert show as an ionic action sheet??        
             $scope.createNew = function() {
-                if ($scope.particulars.colour == "" || $scope.particulars.detail == "") {
-                    alert("Sorry, you didn't input a full entry.")
-                    $state.go('tab.list', {});
-                }else if ($scope.particulars.dinner == true && $scope.particulars.lunch == true
+                if ($scope.particulars.dinner == true && $scope.particulars.lunch == true
                                                              && $scope.particulars.breakfast == true  ) {
                     alert("Select one meal time, make three posts " + 
                         "to be listed for both lunch and dinner.")

@@ -11,16 +11,43 @@
     </ion-nav-buttons>
     <ion-content>
         <ion-refresher on refresh="doRefresh()"></ion-refresher>
-            <ion-list can-swipe="true">
-                <ion-item class="item item-thumbnail-left"
-                 ng-repeat="photo in photoList" 
-                 type="item-text-wrap" 
-                 ui-sref = 'tab.list-detail({itemId: photo.id})'>
-                 <pre>{{photo.attributes.colors}}</pre>
-                    <pre>{{photo.attributes.time}}</pre>
-                    
+                </br>                
+
+                Breakfast Posts
+                <ion-item >
+                    <ion-list ng-repeat="photo in photoList" 
+                    ui-sref = 'tab.list-detail({itemId: photo.id})' >
+                        <a ng-if="photo.attributes.breakfast">
+                            <strong> {{photo.attributes.colors}} </strong>
+                        <hr>
+                         </a>   
+                    </ion-list>
                 </ion-item>
-            </ion-list>
+                </br> 
+                Lunch Posts
+                <ion-item >
+                    <ion-list 
+                    ng-repeat="photo in photoList" 
+                    ui-sref = 'tab.list-detail({itemId: photo.id})' >
+                        <a ng-if="photo.attributes.lunch">
+                            <strong> {{photo.attributes.colors}} </strong>
+                        <hr>
+                         </a>                
+                    </ion-list>
+                </ion-item>
+                </br> 
+                Dinner Posts
+                <ion-item >
+                    <ion-list
+                     ng-repeat="photo in photoList" 
+                    ui-sref = 'tab.list-detail({itemId: photo.id})' >
+                        <a ng-if="photo.attributes.dinner">
+                            <strong> {{photo.attributes.colors}} </strong>
+                        <hr>
+                        </a>                
+                    </ion-list>
+                </ion-item>
+            
     </ion-content>
 </ion-view>
 

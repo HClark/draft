@@ -14,6 +14,7 @@
                 AppService.findStuff().then(function(_photos){
                     $timeout(function(){
                         $scope.photoList = _photos;
+
                         //console.log(JSON.stringify($scope.photoList))
                        // $state.go("tab.list-detail", "id" :photoList.detail);
                     },0);
@@ -131,7 +132,7 @@
             //$scope.particulars.blackburn=false;
             //$scope.particulars.annex=false;
 
-        
+            // S H O U L D this alert show as an ionic action sheet??        
             $scope.createNew = function() {
                 if ($scope.particulars.colour == "" || $scope.particulars.detail == "") {
                     alert("Sorry, you didn't input a full entry.")

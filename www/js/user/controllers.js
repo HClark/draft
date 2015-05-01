@@ -4,6 +4,7 @@
  * be used in an application
  */
 angular.module('user.controllers', [])
+   
     .controller('LoginController', [
         '$state', '$scope', 'UserService',   // <-- controller dependencies
         function ($state, $scope, UserService) {

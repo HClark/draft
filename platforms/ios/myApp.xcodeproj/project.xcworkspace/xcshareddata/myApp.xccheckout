@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>384BEA53-FCF2-4086-B9D4-ADCFD5E921FD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>myApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>02F946FEB80B0DEF969C8B1A79B7559B7B2BA051</key>
+		<string>https://github.com/HClark/draft.git</string>
+		<key>BFAE47A63B6C803FAEE655CAAD1D343DCACA0AAD</key>
+		<string>https://github.com/HClark/one.git</string>
+		<key>CE0F67421ED6664C18ECD0C1B9168108D728B9E5</key>
+		<string>https://github.com/HClark/cycleApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>platforms/ios/myApp.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>02F946FEB80B0DEF969C8B1A79B7559B7B2BA051</key>
+		<string>../../../..</string>
+		<key>BFAE47A63B6C803FAEE655CAAD1D343DCACA0AAD</key>
+		<string>../../../../../..</string>
+		<key>CE0F67421ED6664C18ECD0C1B9168108D728B9E5</key>
+		<string>../../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/HClark/draft.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>02F946FEB80B0DEF969C8B1A79B7559B7B2BA051</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CE0F67421ED6664C18ECD0C1B9168108D728B9E5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>..</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BFAE47A63B6C803FAEE655CAAD1D343DCACA0AAD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>..</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>02F946FEB80B0DEF969C8B1A79B7559B7B2BA051</string>
+			<key>IDESourceControlWCCName</key>
+			<string>draft</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,22 @@
+<ion-view ng-controller="LoginController" title="Meal Offers">
+    <ion-nav-buttons side="left">
+        <button class="button" ui-sref='tab.newItem'>
+            New Item
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button" ng-click="doLogoutAction()">
+            Logout
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+            <ion-list can-swipe="true">
+                <ion-item class="item item-thumbnail-left"
+                 ng-repeat="photo in photoList" 
+                 type="item-text-wrap" 
+                 ui-sref = 'tab.list-detail({itemId: photo.id})'>
+                    <pre>{{photo.attributes.colors}}</pre>
+                </ion-item>
+            </ion-list>
+    </ion-content>
+</ion-view>

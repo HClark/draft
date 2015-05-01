@@ -30,7 +30,8 @@
 
                 console.log('ListCtrl:$stateParams '+JSON.stringify($stateParams));
 
-                if ($stateParams.forceUpdate) {
+                if //($stateParams.forceUpdate) {
+                    (states.fromCache && states.stateName == "tab.list") {
                   updateUI();
                 }
             });
@@ -41,12 +42,13 @@
         '$state', '$scope', '$stateParams', 'UserService', 'AppService', '$timeout',   // <-- controller dependencies
         function ($state, $scope, $stateParams, UserService, AppService, $timeout) {
 
-            debugger;
+            //debugger;
+
             UserService.currentUser().then(function (_user) {
                 $scope.user = _user;
             });
 
-
+            function updateUI() {
             AppService.findUserItems($scope.user).then(function(_photos){
                     $timeout(function(){
                         $scope.userPhotoList = _photos;
@@ -54,22 +56,20 @@
                 }, function(_error){
                     JSON.stringify(alert(_error));
                 });
-
-            /*$scope.doDeleteItem = function () {
-                var deletedItem = AppService.findOneItem($stateParams.itemId);
-                AppService.deleteOneItem(deletedItem);
-                alert("Deleting somehting")
-            };*/
+            };
+            updateUI();
 
             $scope.doDeleteItem = function (myObject) {
               AppService.deleteOneItem(myObject) ({
                 success: function(results) {
                   $scope.sessions = results;
+
                 },
                 error: function(error) {
                   alert("Error: " + error.code + " " + error.message);
                 }
               });
+            $state.go($state.current, {}, {reload: true});
             };
         }])
 

@@ -160,6 +160,7 @@ angular.module('starter',
                //$scope.timme ={"_photo.attributes.time":"Date","iso":"2013-05-07T00:00:00.000Z"};
 
                 $scope.timme=_photo.attributes.time; //d.iso);
+
                 $scope.date = new Date($scope.timme);
                 $scope.yolo = date.getTimezoneOffset();
 
@@ -171,6 +172,19 @@ angular.module('starter',
         }, function(_error) {
             alert(JSON.stringify(_error));
         });
+
+         $scope.doRequest = function () {
+        alert("I am a button!");
+        /*var thisItem = AppService.findOneItem($stateParams.itemId);
+        console.log($stateParams.id);
+        console.log(thisItem.colors);
+        thisItem.set("requestor", UserService.currentUser());*/
+ /*       $scope.photo = [];
+        $scope.Add = function () {
+          $scope.photo.push({requestor: })
+        }*/
+      };
+
     }])
 
 

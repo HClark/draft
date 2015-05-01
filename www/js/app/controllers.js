@@ -74,13 +74,13 @@
         }])
 
 
-
+/*
  .controller('ListDetailCtrl', ['$state', '$scope', 'AppService', '$timeout', '$stateParams', 'UserService', // <-- controller dependencies
     function($state, $scope, AppService, $timeout, $stateParams, UserService) {
 
        //console.log($stateParams.id);
        
-        /*AppService.findOneItem($stateParams.itemId).then(function(_photo) {
+        AppService.findOneItem($stateParams.itemId).then(function(_photo) {
             $timeout(function() {
                 $scope.photoList = _photo;
                 console.log(JSON.stringify($scope.detail, null, 2));
@@ -96,19 +96,19 @@
 
         }, function(_error) {
             alert(JSON.stringify(_error));
-        });*/
+        });
       $scope.doRequest = function () {
         alert("I am a button!");
-        /*var thisItem = AppService.findOneItem($stateParams.itemId);
+        var thisItem = AppService.findOneItem($stateParams.itemId);
         console.log($stateParams.id);
         console.log(thisItem.colors);
-        thisItem.set("requestor", UserService.currentUser());*/
- /*       $scope.photo = [];
+        thisItem.set("requestor", UserService.currentUser());
+       $scope.photo = [];
         $scope.Add = function () {
           $scope.photo.push({requestor: })
-        }*/
+        }
       };
-    }])
+    }]) */
 
  .controller('NewItemCtrl', [
         '$state', '$scope', 'AppService', //'st.timepicker'  // <-- controller dependencies
@@ -136,10 +136,24 @@
                 if ($scope.particulars.colour == "" || $scope.particulars.detail == "") {
                     alert("Sorry, you didn't input a full entry.")
                     $state.go('tab.list', {});
-                } else if ($scope.particulars.lunch == true && $scope.particulars.dinner == true || $scope.particulars.detail == "") {
-                    alert("Select ONE")
+                }else if ($scope.particulars.dinner == true && $scope.particulars.lunch == true
+                                                             && $scope.particulars.breakfast == true  ) {
+                    alert("Select one meal time, make three posts " + 
+                        "to be listed for both lunch and dinner.")
                     //$state.go('tab.list', {});
-                } else {
+                }else if ($scope.particulars.lunch == true && $scope.particulars.breakfast == true ) {
+                    alert("Select one meal time, make two posts " + 
+                        "to be listed for both breakfast & lunch.")
+                    //$state.go('tab.list', {});
+                }  else if ($scope.particulars.breakfast == true && $scope.particulars.dinner == true ) {
+                    alert("Select one meal time, make two posts " + 
+                        "to be listed for both breakfast and dinner.")
+                    //$state.go('tab.list', {});
+                } else if ($scope.particulars.dinner == true && $scope.particulars.lunch == true ) {
+                    alert("Select one meal time, make two posts " + 
+                        "to be listed for both lunch and dinner.")
+                    //$state.go('tab.list', {});
+                }  else {
 
                     // $scope.time = {};
                     // $scope.time.starttime = new Date().Format("YYYY-MM-DD HH:00");

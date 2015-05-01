@@ -78,15 +78,19 @@ angular.module('app.services', [])
 				addition.set("lunch", _lunch);
 				addition.set("dinner", _dinner);
 				addition.set("createdBy", Parse.User.current());
+				addition.set("offerUsername", Parse.User.current().attributes.username);
 
 				if (_blackburn && !_annex) {
 					addition.set("both",0);
+					addition.set("displaycafe","Blackburn");
 				}
 				else if (!_blackburn && _annex) {
 					addition.set("both",1);
+					addition.set("displaycafe","the Annex");
 				}
 				else {
 					addition.set("both",2);
+					addition.set("displaycafe","Blackburn or the Annex");
 				}
 				
 				return addition.save(null, {});

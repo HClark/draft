@@ -92,20 +92,27 @@ angular.module('user.controllers', [])
             };
 
             $scope.doUpdateAcct = function () {
-                if ($scope.tempCreds.first_name !== "") {
-                    $scope.user.set("first_name", $scope.tempCreds.first_name);
-                    alert("Success!");
+                if ($scope.tempCreds.first_name === ""
+                    && $scope.tempCreds.last_name === ""
+                    && $scope.tempCreds.email === "") {
+                    alert("No changes.");
+                    $state.go('tab.account');
+                } else {
+                    if ($scope.tempCreds.first_name !== "") {
+                        $scope.user.set("first_name", $scope.tempCreds.first_name);
+                        alert("Success!");
+                    }
+                    if ($scope.tempCreds.last_name !== "") {
+                        $scope.user.set("last_name", $scope.tempCreds.last_name);
+                        alert("Success?");
+                    }
+                    if ($scope.tempCreds.email !== "") {
+                        $scope.user.set("email", $scope.tempCreds.email);;
+                        alert("Definitely success.");
+                    }
+                    $scope.user.save();
+                    alert("Your information has been saved!");
+                    $state.go('tab.account');
                 }
-                if ($scope.tempCreds.last_name !== "") {
-                    $scope.user.set("last_name", $scope.tempCreds.last_name);
-                    alert("Success?");
-                }
-                if ($scope.tempCreds.email !== "") {
-                    $scope.user.set("email", $scope.tempCreds.email);;
-                    alert("It's freezing.");
-                }
-                $scope.user.save();
-                alert("Your information has been saved!");
-                $state.go('tab.account');
             };
         }]);

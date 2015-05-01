@@ -64,13 +64,15 @@
               AppService.deleteOneItem(myObject) ({
                 success: function(results) {
                   $scope.sessions = results;
-
+                  //updateUI();             //<--Use this once doDeleteItem() functions properly
+                    //Error says AppService.deleteOneItem(...) isn't a function, but executes
+                    //What's in the services anyway.
                 },
                 error: function(error) {
                   alert("Error: " + error.code + " " + error.message);
                 }
               });
-            $state.go($state.current, {}, {reload: true});
+            updateUI();
             };
         }])
 
@@ -120,7 +122,6 @@
                 blackburn: false,
                 annex: false,
                 breakfast: false,
-
                 lunch: false,
                 dinner: false,
 
@@ -151,7 +152,12 @@
                     alert("Select one meal time, make two posts " + 
                         "to be listed for both lunch and dinner.")
                     //$state.go('tab.list', {});
-                }  else {
+                }  else if ($scope.particulars.blackburn == false && $scope.particulars.annex == false) {
+                    alert("Please select a cafeteria.");
+                } else if ($scope.particulars.breakfast == false && $scope.particulars.lunch == false
+                    && $scope.particulars.dinner == false) {
+                    alert("Please select a mealtime.")
+                } else {
 
                     // $scope.time = {};
                     // $scope.time.starttime = new Date().Format("YYYY-MM-DD HH:00");

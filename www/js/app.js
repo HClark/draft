@@ -160,8 +160,8 @@ angular.module('starter',
             }
         });
     })
-  .controller('ListDetailCtrl', ['$state', '$scope', 'AppService', '$timeout', '$stateParams', // <-- controller dependencies
-    function($state, $scope, AppService, $timeout, $stateParams) {
+  .controller('ListDetailCtrl', ['$state', '$scope', 'AppService', '$timeout', '$stateParams', 'UserService', // <-- controller dependencies
+    function($state, $scope, AppService, $timeout, $stateParams, UserService) {
 
         console.log($stateParams.id);
         AppService.findOneItem($stateParams.itemId).then(function(_photo) {
@@ -172,7 +172,7 @@ angular.module('starter',
                 $scope.timme=_photo.attributes.time; //d.iso);
 
                 $scope.date = new Date($scope.timme);
-                $scope.yolo = date.getTimezoneOffset();
+                //$scope.yolo = date.getTimezoneOffset();
 
 
                // $scope.yolo= new Date(timme.T);
@@ -183,8 +183,9 @@ angular.module('starter',
             //alert() //JSON.stringify(_error));
         });
 
-         $scope.doRequest = function () {
-        $state.go('tab.confirm', {});
+        $scope.doRequest = function () {
+            //This function will set the photo requestor to the current user
+            $state.go('tab.confirm', {});
 
         /*var thisItem = AppService.findOneItem($stateParams.itemId);
         console.log($stateParams.id);

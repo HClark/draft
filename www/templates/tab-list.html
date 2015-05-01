@@ -1,15 +1,15 @@
 <ion-view ng-controller="LoginController" title="Hillcycle">
 
-        
- 
     <ion-nav-buttons side="right">
         <button class="button button-clear button-balanced" ng-click="doLogoutAction()">
             Logout
         </button>
     </ion-nav-buttons>
     <ion-content padding="true">
-
-        [click on dinner posts for details]
+        <button class="button button-balanced button-outline button-block" ui-sref='tab.newItem'>
+            New Post
+        </button>
+        [click on posts for details]
         <ion-refresher on refresh="doRefresh()"></ion-refresher>
                 </br>                
 
@@ -17,9 +17,9 @@
 
                 <ion-item >
                     <ion-list ng-repeat="photo in photoList" 
-                    ui-sref = 'tab.list-detail({itemId: photo.id})' >
+                    ui-sref = 'tab.list-detail({itemId: photo.id})'>
                         <a ng-if="photo.attributes.breakfast">
-                            <strong> from {{photo.attributes.createdBy}} </strong>
+                            <strong> from {{photo.attributes.offerUsername}} </strong>
                             <!-- attemp to show username that posted meal swipe-->
                         <hr>
                          </a>   
@@ -32,7 +32,7 @@
                     ng-repeat="photo in photoList" 
                     ui-sref = 'tab.list-detail({itemId: photo.id})' >
                         <a ng-if="photo.attributes.lunch">
-                            <strong> from {{photo.attributes.createdBy}} </strong>
+                            <strong> from {{photo.attributes.offerUsername}} </strong>
                             <!-- attemp to show username that posted meal swipe-->
                         <hr>
                          </a>                
@@ -45,16 +45,12 @@
                      ng-repeat="photo in photoList" 
                     ui-sref = 'tab.list-detail({itemId: photo.id})' >
                         <a ng-if="photo.attributes.dinner">
-                            <strong> from {{photo.attributes.createdBy}} </strong>
+                            <strong> from {{photo.attributes.offerUsername}} </strong>
                             <!-- attemp to show username that posted meal swipe-->
                         <hr>
                         </a>                
                     </ion-list>
                 </ion-item>
-
-                <button class="button button-balanced button-outline button-block" ui-sref='tab.newItem'>
-            New Post
-        </button>
             
     </ion-content>
 </ion-view>

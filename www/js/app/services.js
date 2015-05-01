@@ -7,6 +7,7 @@ angular.module('app.services', [])
 		return {
 			findStuff : function() {
 				var Photos = Parse.Object.extend('photo');
+				//var Photos = Parse.Object.extend('photo');
 				var query = new Parse.Query(Photos);
 				return query.find();
 			},

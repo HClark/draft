@@ -16,7 +16,9 @@
                  ng-repeat="photo in photoList" 
                  type="item-text-wrap" 
                  ui-sref = 'tab.list-detail({itemId: photo.id})'>
-                    <pre>{{photo.attributes.colors}}</pre>
+                 <pre>{{photo.attributes.colors}}</pre>
+                    <pre>{{photo.attributes.time}}</pre>
+                    
                 </ion-item>
             </ion-list>
     </ion-content>

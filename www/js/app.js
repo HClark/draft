@@ -157,6 +157,14 @@ angular.module('starter',
         AppService.findOneItem($stateParams.itemId).then(function(_photo) {
             $timeout(function() {
                 $scope.photo = _photo;
+               //$scope.timme ={"_photo.attributes.time":"Date","iso":"2013-05-07T00:00:00.000Z"};
+
+                $scope.timme=_photo.attributes.time; //d.iso);
+                $scope.date = new Date($scope.timme);
+                $scope.yolo = date.getTimezoneOffset();
+
+
+               // $scope.yolo= new Date(timme.T);
                 console.log(JSON.stringify($scope.photo, null, 2));
             }, 0);
 

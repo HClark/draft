@@ -136,6 +136,9 @@
                 if ($scope.particulars.colour == "" || $scope.particulars.detail == "") {
                     alert("Sorry, you didn't input a full entry.")
                     $state.go('tab.list', {});
+                } else if ($scope.particulars.lunch == true && $scope.particulars.dinner == true || $scope.particulars.detail == "") {
+                    alert("Select ONE")
+                    //$state.go('tab.list', {});
                 } else {
 
                     // $scope.time = {};

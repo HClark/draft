@@ -2,26 +2,31 @@
     </ion-nav-buttons>
     <ion-content class="padding">
      <ion-refresher on refresh="doRefresh()"></ion-refresher>
-        <ion-item>
+        <!--ion-item>
             <pre>{{user | json}}</pre>
-        </ion-item>
+        </ion-item-->
         <ion-item>
         	<div class="item item-text-wrap">
-            	<pre>Name: {{user.attributes.first_name + " "
+            	<pre>{{user.attributes.first_name + " "
                     + user.attributes.last_name}}</pre>
             </div>
     	</ion-item>
 
-    <button class="button button-outline button-balanced button-block" ui-sref='tab.update-account'>
-        Update Account
-    </button>
-
+        </br>
+        Current Posts: 
+        </br>
+        </br>
 
         <ion-list can-swipe="true">
             <ion-item class="item item-thumbnail-left"
              ng-repeat="photo in userPhotoList" 
              type="item-text-wrap" 
-             ui-sref = 'tab.list-detail({itemId: photo.id})'>
+             >
+             <!--
+            
+            A D D ME back ___ address to new details page!!!
+            
+             ui-sref = 'tab.list-detail({itemId: photo.id})'-->
                 <pre>{{photo.attributes.colors}}</pre>
                 <ion-option-button class="button button-balanced button-block" ng-click="doDeleteItem(photo)">
                     DELETE
@@ -29,7 +34,9 @@
             </ion-item>
         </ion-list>
 
-
+        <button class="button button-outline button-balanced button-block" ui-sref='tab.update-account'>
+        Open Account Settings
+    </button>
 
 
     </ion-content>

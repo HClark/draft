@@ -1,4 +1,4 @@
-<ion-view ng-controller="LoginController" title="Meal Offers">
+<ion-view ng-controller="LoginController" title="Hillcycle">
     <ion-nav-buttons side="left">
         <button class="button" ui-sref='tab.newItem'>
             New Item
@@ -9,7 +9,7 @@
             Logout
         </button>
     </ion-nav-buttons>
-    <ion-content>
+    <ion-content padding="true">
         <ion-refresher on refresh="doRefresh()"></ion-refresher>
                 </br>                
 
@@ -18,7 +18,7 @@
                     <ion-list ng-repeat="photo in photoList" 
                     ui-sref = 'tab.list-detail({itemId: photo.id})' >
                         <a ng-if="photo.attributes.breakfast">
-                            <strong> {{photo.attributes.colors}} </strong>
+                            <strong> from {{photo.attributes.createdBy}} </strong>
                         <hr>
                          </a>   
                     </ion-list>
@@ -30,7 +30,7 @@
                     ng-repeat="photo in photoList" 
                     ui-sref = 'tab.list-detail({itemId: photo.id})' >
                         <a ng-if="photo.attributes.lunch">
-                            <strong> {{photo.attributes.colors}} </strong>
+                            <strong> from {{photo.attributes.createdBy}} </strong>
                         <hr>
                          </a>                
                     </ion-list>
@@ -42,7 +42,7 @@
                      ng-repeat="photo in photoList" 
                     ui-sref = 'tab.list-detail({itemId: photo.id})' >
                         <a ng-if="photo.attributes.dinner">
-                            <strong> {{photo.attributes.colors}} </strong>
+                            <strong> from {{photo.attributes.createdBy}} </strong>
                         <hr>
                         </a>                
                     </ion-list>

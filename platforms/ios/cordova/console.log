@@ -5,3 +5,70 @@
 2015-05-01 01:47:57.868 myApp[11850:1715123] Resetting plugins due to page load.
 2015-05-01 01:47:58.502 myApp[11850:1715123] Finished load of: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Bundle/Application/55EAA690-1F48-4B8D-880E-2F337E66313B/myApp.app/www/index.html#/tab/list
 2015-05-01 01:51:06.087 myApp[11850:1716780] Terminating since there is no system app.
+2015-05-01 07:58:01.697 myApp[12705:1855130] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Data/Application/21A743BA-A8F4-4E6B-91CA-DC153299D615/Library/Cookies/Cookies.binarycookies
+2015-05-01 07:58:02.087 myApp[12705:1855130] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-01 07:58:02.088 myApp[12705:1855130] Multi-tasking -> Device: YES, App: YES
+2015-05-01 07:58:02.118 myApp[12705:1855130] Unlimited access to network resources
+2015-05-01 07:58:03.086 myApp[12705:1855130] Resetting plugins due to page load.
+2015-05-01 07:58:03.437 myApp[12705:1855130] Finished load of: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Bundle/Application/2D0B43EA-7AB8-411F-AFAA-6BC52A8637D1/myApp.app/www/index.html#/tab/list
+2015-05-01 09:00:14.729 myApp[13060:1870153] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Data/Application/887BA315-156E-4C5C-B471-9FCC83694D79/Library/Cookies/Cookies.binarycookies
+2015-05-01 09:00:15.116 myApp[13060:1870153] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-01 09:00:15.118 myApp[13060:1870153] Multi-tasking -> Device: YES, App: YES
+2015-05-01 09:00:15.126 myApp[13060:1870153] Unlimited access to network resources
+2015-05-01 09:00:15.595 myApp[13060:1870153] Resetting plugins due to page load.
+2015-05-01 09:00:16.017 myApp[13060:1870153] Finished load of: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Bundle/Application/F93E275F-7FC5-4B08-85F5-BE27EB0623A9/myApp.app/www/index.html
+2015-05-01 09:00:19.738 myApp[13060:1870192] Communications error: <OS_xpc_error: <error: 0x2d3a5f4> { count = 1, contents =
+	"XPCErrorDescription" => <string: 0x2d3a83c> { length = 22, contents = "Connection interrupted" }
+}>
+2015-05-01 09:01:21.571 myApp[13285:1872273] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Data/Application/1ED6DCA0-D7D7-4428-B9A3-9CEBB2B34E78/Library/Cookies/Cookies.binarycookies
+2015-05-01 09:01:21.677 myApp[13285:1872273] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-01 09:01:21.678 myApp[13285:1872273] Multi-tasking -> Device: YES, App: YES
+2015-05-01 09:01:21.680 myApp[13285:1872273] Unlimited access to network resources
+2015-05-01 09:01:21.852 myApp[13285:1872273] Resetting plugins due to page load.
+2015-05-01 09:01:22.104 myApp[13285:1872273] Finished load of: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Bundle/Application/7FA9BDF3-345D-40F5-B7B9-38427E81BA22/myApp.app/www/index.html#/tab/list
+2015-05-01 13:46:19.010 myApp[13285:1932356] Terminating since there is no system app.
+2015-05-01 17:58:46.933 myApp[14296:1998535] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Data/Application/89923D5B-BEC3-4ABC-955B-A219089361C9/Library/Cookies/Cookies.binarycookies
+2015-05-01 17:58:47.341 myApp[14296:1998535] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-01 17:58:47.342 myApp[14296:1998535] Multi-tasking -> Device: YES, App: YES
+2015-05-01 17:58:47.368 myApp[14296:1998535] Unlimited access to network resources
+2015-05-01 17:58:48.274 myApp[14296:1998535] Resetting plugins due to page load.
+2015-05-01 17:58:48.608 myApp[14296:1998535] Finished load of: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Bundle/Application/24DFE559-6E09-45CF-8E7E-54DB1340A7AE/myApp.app/www/index.html#/tab/list
+2015-05-01 18:01:44.129 myApp[14526:2000943] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Data/Application/CBBFBB80-7841-439C-A328-A5EE194BA5EA/Library/Cookies/Cookies.binarycookies
+2015-05-01 18:01:44.221 myApp[14526:2000943] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-01 18:01:44.221 myApp[14526:2000943] Multi-tasking -> Device: YES, App: YES
+2015-05-01 18:01:44.224 myApp[14526:2000943] Unlimited access to network resources
+2015-05-01 18:01:44.371 myApp[14526:2000943] Resetting plugins due to page load.
+2015-05-01 18:01:44.794 myApp[14526:2000943] Finished load of: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Bundle/Application/55C025BE-9DC4-4E7C-AFA4-E365763E0B9D/myApp.app/www/index.html#/tab/list
+2015-05-01 18:05:48.080 myApp[14752:2003297] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Data/Application/DF63ABD5-B309-42AB-8965-B7FAEFB69E17/Library/Cookies/Cookies.binarycookies
+2015-05-01 18:05:48.168 myApp[14752:2003297] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-01 18:05:48.168 myApp[14752:2003297] Multi-tasking -> Device: YES, App: YES
+2015-05-01 18:05:48.171 myApp[14752:2003297] Unlimited access to network resources
+2015-05-01 18:05:48.333 myApp[14752:2003297] Resetting plugins due to page load.
+2015-05-01 18:05:48.558 myApp[14752:2003297] Finished load of: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Bundle/Application/B8ABEC8D-739B-4EE2-B7BC-9157C59E68BE/myApp.app/www/index.html#/tab/list
+2015-05-01 18:07:09.493 myApp[14752:2004255] Terminating since there is no system app.
+2015-05-01 18:12:03.413 myApp[14980:2006690] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Data/Application/7FB32D76-083D-44FC-88A6-E0D9772E46A7/Library/Cookies/Cookies.binarycookies
+2015-05-01 18:12:03.515 myApp[14980:2006690] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-01 18:12:03.515 myApp[14980:2006690] Multi-tasking -> Device: YES, App: YES
+2015-05-01 18:12:03.522 myApp[14980:2006690] Unlimited access to network resources
+2015-05-01 18:12:03.700 myApp[14980:2006690] Resetting plugins due to page load.
+2015-05-01 18:12:04.005 myApp[14980:2006690] Finished load of: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Bundle/Application/E5EDD08E-8EB2-4A28-8507-41A8AF0CF79E/myApp.app/www/index.html#/tab/list
+2015-05-01 18:13:00.230 myApp[14980:2006990] Terminating since there is no system app.
+2015-05-01 18:14:20.854 myApp[15204:2008471] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Data/Application/FCA89977-6194-4685-9855-DF92E813961A/Library/Cookies/Cookies.binarycookies
+2015-05-01 18:14:20.988 myApp[15204:2008471] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-01 18:14:20.989 myApp[15204:2008471] Multi-tasking -> Device: YES, App: YES
+2015-05-01 18:14:20.992 myApp[15204:2008471] Unlimited access to network resources
+2015-05-01 18:14:21.154 myApp[15204:2008471] Resetting plugins due to page load.
+2015-05-01 18:14:21.365 myApp[15204:2008471] Finished load of: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Bundle/Application/EF52E6D8-12D7-4779-AEB6-F38B73627097/myApp.app/www/index.html#/tab/list
+2015-05-01 23:14:16.745 myApp[15782:2059833] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Data/Application/6C75CCDD-6A37-4359-B99A-5B3AB0CDE120/Library/Cookies/Cookies.binarycookies
+2015-05-01 23:14:16.850 myApp[15782:2059833] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-01 23:14:16.851 myApp[15782:2059833] Multi-tasking -> Device: YES, App: YES
+2015-05-01 23:14:16.853 myApp[15782:2059833] Unlimited access to network resources
+2015-05-01 23:14:17.226 myApp[15782:2059833] Resetting plugins due to page load.
+2015-05-01 23:14:17.426 myApp[15782:2059833] Finished load of: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Bundle/Application/0B8090BF-39BA-4D66-A17E-95A679C5241B/myApp.app/www/index.html
+2015-05-01 23:14:38.889 myApp[15782:2060046] Terminating since there is no system app.
+2015-05-01 23:14:52.919 myApp[15997:2060818] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Data/Application/0873061E-A1F4-4901-93D4-5A809D46138A/Library/Cookies/Cookies.binarycookies
+2015-05-01 23:14:53.007 myApp[15997:2060818] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-01 23:14:53.007 myApp[15997:2060818] Multi-tasking -> Device: YES, App: YES
+2015-05-01 23:14:53.009 myApp[15997:2060818] Unlimited access to network resources
+2015-05-01 23:14:53.140 myApp[15997:2060818] Resetting plugins due to page load.
+2015-05-01 23:14:53.356 myApp[15997:2060818] Finished load of: file:///Users/hannahclark/Library/Developer/CoreSimulator/Devices/092D9B3D-CE6A-4E8C-B0A2-D5C5CDC53834/data/Containers/Bundle/Application/B41FB141-C575-4F19-9E8C-C8E739F3B5BA/myApp.app/www/index.html#/tab/list

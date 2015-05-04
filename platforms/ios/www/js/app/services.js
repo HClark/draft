@@ -7,6 +7,7 @@ angular.module('app.services', [])
 		return {
 			findStuff : function() {
 				var Photos = Parse.Object.extend('photo');
+				//var Photos = Parse.Object.extend('photo');
 				var query = new Parse.Query(Photos);
 				return query.find();
 			},
@@ -21,7 +22,7 @@ angular.module('app.services', [])
 			    query.equalTo("createdBy", Parse.User.current());
 			    return query.find();
 			},
-			deleteOneItem: function(_deleteThis) {
+			deleteOneItem : function(_deleteThis) {
 				/*
 				 myObject.destroy({
                   success: function(_deleteThis) {
@@ -46,10 +47,10 @@ angular.module('app.services', [])
 
 
 				//typeof _deleteThis;
-				console.log(Object.keys(_deleteThis));
-				var Photos = Parse.Object.extend('photo');
-				var query = new Parse.Query(Photos);
-				query.get(_deleteThis, {
+				//console.log(Object.keys(_deleteThis));
+				//var Photos = Parse.Object.extend('photo');
+				//var query = new Parse.Query(Photos);
+				/*query.get(_deleteThis, {
 					success: function(_deleteThis) {
 						console.log("Found the object to delete.")
 						_deleteThis.destroy({});
@@ -57,10 +58,10 @@ angular.module('app.services', [])
 					error: function(object, error) {
 						console.log("Nope, didn't find it. Try again.")
 					}
-				});
+				});*/
 				_deleteThis.destroy({
 					success: function(_deleteThis) {
-
+						alert("I've deleted something");
 					}
 				})
 
@@ -77,19 +78,27 @@ angular.module('app.services', [])
 				addition.set("lunch", _lunch);
 				addition.set("dinner", _dinner);
 				addition.set("createdBy", Parse.User.current());
+				addition.set("offerUsername", Parse.User.current().attributes.username);
 
 				if (_blackburn && !_annex) {
 					addition.set("both",0);
+					addition.set("displaycafe","Blackburn");
 				}
 				else if (!_blackburn && _annex) {
 					addition.set("both",1);
+					addition.set("displaycafe","the Annex");
 				}
 				else {
 					addition.set("both",2);
+					addition.set("displaycafe","Blackburn or the Annex");
 				}
 				
 				return addition.save(null, {});
+			},
+			updateItemReq : function() {
+
 			}
+
 		}
 
 

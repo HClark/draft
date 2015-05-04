@@ -116,6 +116,16 @@ angular.module('starter',
                     }
                 }
 
+            })
+            .state('tab.confirm', {
+                url: '/confirm',
+                views: {
+                    'tab-list': {
+                        templateUrl: 'templates/confirm.html',
+                        controller: 'ListDetailCtrl'
+                    }
+                }
+
             });
 
         // if none of the above states are matched, use this as the fallback
@@ -150,19 +160,43 @@ angular.module('starter',
             }
         });
     })
-  .controller('ListDetailCtrl', ['$state', '$scope', 'AppService', '$timeout', '$stateParams', // <-- controller dependencies
-    function($state, $scope, AppService, $timeout, $stateParams) {
+  .controller('ListDetailCtrl', ['$state', '$scope', 'AppService', '$timeout', '$stateParams', 'UserService', // <-- controller dependencies
+    function($state, $scope, AppService, $timeout, $stateParams, UserService) {
 
         console.log($stateParams.id);
         AppService.findOneItem($stateParams.itemId).then(function(_photo) {
             $timeout(function() {
                 $scope.photo = _photo;
+               //$scope.timme ={"_photo.attributes.time":"Date","iso":"2013-05-07T00:00:00.000Z"};
+
+                $scope.timme=_photo.attributes.time; //d.iso);
+
+                $scope.date = new Date($scope.timme);
+                //$scope.yolo = date.getTimezoneOffset();
+
+
+               // $scope.yolo= new Date(timme.T);
                 console.log(JSON.stringify($scope.photo, null, 2));
             }, 0);
 
         }, function(_error) {
-            alert(JSON.stringify(_error));
+            //alert() //JSON.stringify(_error));
         });
+
+        $scope.doRequest = function () {
+            //This function will set the photo requestor to the current user
+            $state.go('tab.confirm', {});
+
+        /*var thisItem = AppService.findOneItem($stateParams.itemId);
+        console.log($stateParams.id);
+        console.log(thisItem.colors);
+        thisItem.set("requestor", UserService.currentUser());*/
+ /*       $scope.photo = [];
+        $scope.Add = function () {
+          $scope.photo.push({requestor: })
+        }*/
+      };
+
     }])
 
 

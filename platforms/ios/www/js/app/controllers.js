@@ -14,6 +14,7 @@
                 AppService.findStuff().then(function(_photos){
                     $timeout(function(){
                         $scope.photoList = _photos;
+
                         //console.log(JSON.stringify($scope.photoList))
                        // $state.go("tab.list-detail", "id" :photoList.detail);
                     },0);
@@ -30,7 +31,8 @@
 
                 console.log('ListCtrl:$stateParams '+JSON.stringify($stateParams));
 
-                if ($stateParams.forceUpdate) {
+                if //($stateParams.forceUpdate) {
+                    (states.fromCache && states.stateName == "tab.list") {
                   updateUI();
                 }
             });
@@ -41,12 +43,13 @@
         '$state', '$scope', '$stateParams', 'UserService', 'AppService', '$timeout',   // <-- controller dependencies
         function ($state, $scope, $stateParams, UserService, AppService, $timeout) {
 
-            debugger;
+            //debugger;
+
             UserService.currentUser().then(function (_user) {
                 $scope.user = _user;
             });
 
-
+            function updateUI() {
             AppService.findUserItems($scope.user).then(function(_photos){
                     $timeout(function(){
                         $scope.userPhotoList = _photos;
@@ -54,31 +57,31 @@
                 }, function(_error){
                     JSON.stringify(alert(_error));
                 });
-
-            /*$scope.doDeleteItem = function () {
-                var deletedItem = AppService.findOneItem($stateParams.itemId);
-                AppService.deleteOneItem(deletedItem);
-                alert("Deleting somehting")
-            };*/
+            };
+            updateUI();
 
             $scope.doDeleteItem = function (myObject) {
               AppService.deleteOneItem(myObject) ({
                 success: function(results) {
                   $scope.sessions = results;
+                  //updateUI();             //<--Use this once doDeleteItem() functions properly
+                    //Error says AppService.deleteOneItem(...) isn't a function, but executes
+                    //What's in the services anyway.
                 },
                 error: function(error) {
                   alert("Error: " + error.code + " " + error.message);
                 }
               });
+            updateUI();
             };
         }])
 
 
+/*
+ .controller('ListDetailCtrl', ['$state', '$scope', 'AppService', '$timeout', '$stateParams', 'UserService', // <-- controller dependencies
+    function($state, $scope, AppService, $timeout, $stateParams, UserService) {
 
- .controller('ListDetailCtrl', ['$state', '$scope', 'AppService', '$timeout', '$stateParams', // <-- controller dependencies
-    function($state, $scope, AppService, $timeout, $stateParams) {
-
-       console.log($stateParams.id);
+       //console.log($stateParams.id);
        
         AppService.findOneItem($stateParams.itemId).then(function(_photo) {
             $timeout(function() {
@@ -97,9 +100,18 @@
         }, function(_error) {
             alert(JSON.stringify(_error));
         });
-
-
-    }])
+      $scope.doRequest = function () {
+        alert("I am a button!");
+        var thisItem = AppService.findOneItem($stateParams.itemId);
+        console.log($stateParams.id);
+        console.log(thisItem.colors);
+        thisItem.set("requestor", UserService.currentUser());
+       $scope.photo = [];
+        $scope.Add = function () {
+          $scope.photo.push({requestor: })
+        }
+      };
+    }]) */
 
  .controller('NewItemCtrl', [
         '$state', '$scope', 'AppService', //'st.timepicker'  // <-- controller dependencies
@@ -110,7 +122,6 @@
                 blackburn: false,
                 annex: false,
                 breakfast: false,
-
                 lunch: false,
                 dinner: false,
 
@@ -122,11 +133,30 @@
             //$scope.particulars.blackburn=false;
             //$scope.particulars.annex=false;
 
-        
+            // S H O U L D this alert show as an ionic action sheet??        
             $scope.createNew = function() {
-                if ($scope.particulars.colour == "" || $scope.particulars.detail == "") {
-                    alert("Sorry, you didn't input a full entry.")
-                    $state.go('tab.list', {});
+                if ($scope.particulars.dinner == true && $scope.particulars.lunch == true
+                                                             && $scope.particulars.breakfast == true  ) {
+                    alert("Select one meal time, make three posts " + 
+                        "to be listed for both lunch and dinner.")
+                    //$state.go('tab.list', {});
+                }else if ($scope.particulars.lunch == true && $scope.particulars.breakfast == true ) {
+                    alert("Select one meal time, make two posts " + 
+                        "to be listed for both breakfast & lunch.")
+                    //$state.go('tab.list', {});
+                }  else if ($scope.particulars.breakfast == true && $scope.particulars.dinner == true ) {
+                    alert("Select one meal time, make two posts " + 
+                        "to be listed for both breakfast and dinner.")
+                    //$state.go('tab.list', {});
+                } else if ($scope.particulars.dinner == true && $scope.particulars.lunch == true ) {
+                    alert("Select one meal time, make two posts " + 
+                        "to be listed for both lunch and dinner.")
+                    //$state.go('tab.list', {});
+                }  else if ($scope.particulars.blackburn == false && $scope.particulars.annex == false) {
+                    alert("Please select a cafeteria.");
+                } else if ($scope.particulars.breakfast == false && $scope.particulars.lunch == false
+                    && $scope.particulars.dinner == false) {
+                    alert("Please select a mealtime.")
                 } else {
 
                     // $scope.time = {};

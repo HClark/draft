@@ -185,6 +185,23 @@ angular.module('starter',
 
         $scope.doRequest = function () {
             //This function will set the photo requestor to the current user
+            $scope.sendRequest = function () {
+                if window.plugins && window.plugins emailComposer) {
+                    window.plugins.emailComposer.showEmailComposerWithCallback(function(result) {
+                console.log("Response -> " + result);
+                },
+                "Hillcycle: Meal Request from User {{UserService.currentUser().username",  //Subject
+                "Hello, my name is {{UserService.currentUser().first_name}}. I am inquring about a meal", //Body
+                ["testemail@test.com"], //Email
+                null,   //CC
+                null,   //BCC
+                false,  //isHTML
+                null,   //Attachments
+                null);  //Attachment Data
+                }
+
+            };
+            
             $state.go('tab.confirm', {});
 
         /*var thisItem = AppService.findOneItem($stateParams.itemId);
